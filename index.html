@@ -158,10 +158,10 @@
             font-weight: 600;
         }
 
-        /* FIXED MYBID CONTAINER */
+        /* MYBID SIDEBAR BOX */
         .mybid-sidebar-box {
             background: var(--card-bg);
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            border: 1px solid rgba(16, 185, 129, 0.4);
             border-radius: 16px;
             padding: 15px 10px;
             margin-bottom: 20px;
@@ -177,11 +177,19 @@
 
         .mybid-badge {
             font-size: 0.75rem;
-            color: var(--text-muted);
+            color: #34d399;
             margin-bottom: 12px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
+        }
+
+        .mybid-ad-wrapper {
+            width: 100%;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         header {
@@ -547,10 +555,12 @@
                     <script src="//data527.click/js/responsive.js" async></script>
                 </div>
 
-                <!-- MYBID AD BOX WITH FIXED HEIGHT & CLEAR TITLE -->
+                <!-- MYBID AD BOX WITH GUARANTEED DISPLAY STRUCTURE -->
                 <div class="mybid-sidebar-box">
                     <div class="mybid-badge">⚡ SPONSORED BY MYBID</div>
-                    <div data-banner-id="2027802" style="width:100%;"></div>
+                    <div class="mybid-ad-wrapper">
+                        <div data-banner-id="2027802" style="width:100%; display:block;"></div>
+                    </div>
                 </div>
 
                 <div class="sidebar-widget">
