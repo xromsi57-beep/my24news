@@ -6,11 +6,11 @@
     <!-- PURANA META TAG -->
     <meta name="clckd" content="408d049f20483ea45eb96af97eb7d495" />
     
-    <!-- HILLTOPADS VERIFICATION META TAGS (NAYE WALE) -->
+    <!-- HILLTOPADS VERIFICATION META TAGS -->
     <meta name="909fcd530170ca031904dfad4dc72b2bd81d5dd1" content="909fcd530170ca031904dfad4dc72b2bd81d5dd1" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
-    <!-- NAYA MBIDADM AD SCRIPT ADDED HERE -->
+    <!-- MBIDADM AD SCRIPT -->
     <script async src="https://js.mbidadm.com/static/scripts.js" data-admpid="462825"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -721,7 +721,6 @@
                 
                 const deleteBtnClass = isAdminLoggedIn ? "delete-btn admin-visible" : "delete-btn";
 
-                // Agar Database me image_url maujood hai, toh image display karein
                 const imageHtml = news.image_url ? `<div class="news-image-container" style="margin-bottom: 15px;"><img src="${escapeHtml(news.image_url)}" alt="News Image" style="width: 100%; height: auto; max-height: 400px; border-radius: 10px; object-fit: cover;"></div>` : '';
 
                 card.innerHTML = `
@@ -785,7 +784,6 @@
             const imageUrl = document.getElementById('imageUrl').value;
             const content = document.getElementById('content').value;
 
-            // Supabase me 'image_url' column me data bhej rahe hain
             const { error } = await _supabase
                 .from('news')
                 .insert([{ title, content, image_url: imageUrl }]);
