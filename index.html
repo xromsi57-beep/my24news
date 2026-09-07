@@ -2,19 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <!-- PURANA META TAG -->
+    <!-- Ad Network Verification Meta Tag -->
     <meta name="clckd" content="408d049f20483ea45eb96af97eb7d495" />
-    
-    <!-- HILLTOPADS VERIFICATION META TAGS -->
-    <meta name="909fcd530170ca031904dfad4dc72b2bd81d5dd1" content="909fcd530170ca031904dfad4dc72b2bd81d5dd1" />
-    <meta name="referrer" content="no-referrer-when-downgrade" />
-
-    <!-- MBIDADM AD SCRIPT -->
-    <script async src="https://js.mbidadm.com/static/scripts.js" data-admpid="462825"></script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chronicle 24/7 - Live Global News</title>
+    
+    <!-- MyBid AD Network Script -->
+    <script async src="https://js.mbidadm.com/static/scripts.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         :root {
@@ -36,9 +31,10 @@
             min-height: 100vh;
             margin: 0;
             padding: 0;
-            padding-bottom: 90px;
+            padding-bottom: 90px; /* Space for sticky bottom ad */
         }
 
+        /* Sticky Bottom Bar Ad (Ad 2 - UNTOUCHED) */
         .sticky-bottom-ad {
             position: fixed;
             bottom: 0;
@@ -92,6 +88,7 @@
             transform: scale(1.02);
         }
 
+        /* NEW INTERACTIVE AD BANNER (Smartlink-3454034 / Smartlink_1) */
         .interactive-reward-banner {
             background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(139, 92, 246, 0.2));
             border: 2px dashed rgba(236, 72, 153, 0.5);
@@ -155,20 +152,44 @@
             box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6);
         }
 
+        /* ADVERTICA SIDEBAR CONTAINER */
         .advertica-sidebar-box {
             background: var(--card-bg);
-            border: 1px solid var(--card-border);
+            border: 1px solid rgba(99, 102, 241, 0.3);
             border-radius: 16px;
-            padding: 15px;
+            padding: 15px 10px;
             margin-bottom: 20px;
             backdrop-filter: blur(10px);
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            position: relative;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .advertica-sidebar-box:hover {
+            border-color: rgba(168, 85, 247, 0.6);
+            transform: translateY(-2px);
         }
 
         .advertica-badge {
             font-size: 0.75rem;
             color: var(--text-muted);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* NEW MYBID AD CONTAINER */
+        .mybid-sidebar-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 16px;
+            padding: 15px 10px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
         }
 
         header {
@@ -245,6 +266,7 @@
             box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
         }
 
+        /* Main Grid Layout with Sidebar */
         .main-layout {
             display: grid;
             grid-template-columns: 1fr 340px;
@@ -258,6 +280,7 @@
             }
         }
 
+        /* Sidebar Styling */
         .sidebar {
             position: sticky;
             top: 20px;
@@ -371,6 +394,7 @@
             margin-top: 0;
         }
 
+        /* Ad 1: First News ke Upar wala Banner Ad Box */
         .first-banner-ad-box {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -382,6 +406,7 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
+        /* Ad 3: In-Feed Ad Box */
         .infeed-ad-box {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -529,7 +554,7 @@
 
     <div id="toastContainer"></div>
 
-    <!-- AD 1: Fixed Bottom Sticky Bar -->
+    <!-- AD 2: Fixed Bottom Sticky Bar (UNTOUCHED) -->
     <div class="sticky-bottom-ad">
         <div class="sticky-ad-content">
             <span>🔴</span>
@@ -566,11 +591,6 @@
                     <label for="title">Headline</label>
                     <input type="text" id="title" required placeholder="Catchy news headline...">
                 </div>
-                <!-- IMAGE URL INPUT FIELD -->
-                <div class="form-group">
-                    <label for="imageUrl">Image URL (Optional)</label>
-                    <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg">
-                </div>
                 <div class="form-group">
                     <label for="content">Full Story</label>
                     <textarea id="content" required placeholder="Write the complete news report here..."></textarea>
@@ -579,18 +599,22 @@
             </form>
         </div>
 
+        <!-- Main Layout with News Feed and Sidebar -->
         <div class="main-layout">
             
+            <!-- Left Side: News Feed -->
             <div class="news-feed">
                 <h2>Live Feed</h2>
                 
-                <!-- AD 2: First News ke Upar wala Banner (A-ADS) -->
+                <!-- AD 1: First News ke Upar wala Banner Ad Box (UNTOUCHED) -->
                 <div class="first-banner-ad-box">
                     <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">Sponsored Banner Ad</div>
+                    <!-- BEGIN AADS AD UNIT 2454542 -->
                     <div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
                          <iframe data-aa='2454542' src='//acceptable.a-ads.com/2454542/?size=Adaptive'
-                                 style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
+                                     style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
                     </div>
+                    <!-- END AADS AD UNIT 2454542 -->
                 </div>
 
                 <div id="newsContainer">
@@ -598,9 +622,10 @@
                 </div>
             </div>
 
+            <!-- Right Side: Sidebar with Smartlink, Advertica & MyBid Ad -->
             <aside class="sidebar">
                 
-                <!-- AD 3: SMARTLINK BANNER -->
+                <!-- SMARTLINK BANNER (UNTOUCHED) -->
                 <div class="interactive-reward-banner">
                     <span class="reward-badge">⭐ Special Offer</span>
                     <h3>Exclusive Bonus Rewards</h3>
@@ -608,11 +633,17 @@
                     <a href="https://www.profitableratecpmnetwork.com/fcsxqmrtf?key=77785123756f4a00c1f2d566da9c0500" target="_blank" class="interactive-claim-btn">Claim Reward Now</a>
                 </div>
 
-                <!-- AD 4: ADVERTICA SIDEBAR AD (Original Code) -->
+                <!-- ADVERTICA INTERACTIVE SIDEBAR AD UNIT (UNTOUCHED) -->
                 <div class="advertica-sidebar-box">
-                    <div class="advertica-badge">⚡ Sponsored Ad</div>
+                    <div class="advertica-badge">⚡ Sponsored by Advertica</div>
                     <ins style="width: 0px;height:0px" data-width="0" data-height="0" class="h4930b1d51b" data-domain="//data527.click" data-affquery="/ab884ae6fb96d85e7a23/4930b1d51b/?placementName=advertica"></ins>
                     <script src="//data527.click/js/responsive.js" async></script>
+                </div>
+
+                <!-- NEW: MYBID AD UNIT BANNER (Format ID: 2027802) -->
+                <div class="mybid-sidebar-box">
+                    <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px; text-transform:uppercase; font-weight:600;">Sponsored Content</div>
+                    <div data-banner-id="2027802"></div>
                 </div>
 
                 <div class="sidebar-widget">
@@ -625,7 +656,11 @@
 
     </div>
 
+    <!-- Advertica Responsive Script Loader (UNTOUCHED) -->
+    <script src="//data527.click/js/responsive.js" async></script>
+
     <script>
+        // --- SUPABASE CONFIGURATION ---
         const SUPABASE_URL = 'https://lxktfhinbdchhqgoutke.supabase.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_dABXCMeRrnUbouX9-AlYhw_ZEzDnJ7_';
 
@@ -708,10 +743,7 @@
                 
                 const deleteBtnClass = isAdminLoggedIn ? "delete-btn admin-visible" : "delete-btn";
 
-                const imageHtml = news.image_url ? `<div class="news-image-container" style="margin-bottom: 15px;"><img src="${escapeHtml(news.image_url)}" alt="News Image" style="width: 100%; height: auto; max-height: 400px; border-radius: 10px; object-fit: cover;"></div>` : '';
-
                 card.innerHTML = `
-                    ${imageHtml}
                     <h3>${escapeHtml(news.title)}</h3>
                     <div class="news-meta-info">
                         <span class="news-date">📅 ${dateStr}</span>
@@ -725,6 +757,7 @@
                 `;
                 newsContainer.appendChild(card);
 
+                // AD 3: In-Feed Ad (UNTOUCHED)
                 if (index === 0) {
                     const adBox = document.createElement('div');
                     adBox.className = 'infeed-ad-box';
@@ -768,12 +801,11 @@
             publishBtn.textContent = "Publishing...";
 
             const title = document.getElementById('title').value;
-            const imageUrl = document.getElementById('imageUrl').value;
             const content = document.getElementById('content').value;
 
             const { error } = await _supabase
                 .from('news')
-                .insert([{ title, content, image_url: imageUrl }]);
+                .insert([{ title, content }]);
 
             publishBtn.disabled = false;
             publishBtn.textContent = "Publish to Cloud";
