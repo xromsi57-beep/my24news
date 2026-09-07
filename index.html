@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chronicle 24/7 - Live Global News</title>
     
-    <!-- MyBid AD Network Script -->
-    <script async src="https://js.mbidadm.com/static/scripts.js"></script>
-    
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         :root {
@@ -157,17 +154,16 @@
             font-weight: 600;
         }
 
-        /* GUARANTEED AD DISPLAY CONTAINER */
+        /* GUARANTEED DISPLAY SIDEBAR CARD */
         .mybid-sidebar-box {
             background: var(--card-bg);
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            border: 1px solid rgba(168, 85, 247, 0.4);
             border-radius: 16px;
-            padding: 15px 10px;
+            padding: 20px 15px;
             margin-bottom: 20px;
             backdrop-filter: blur(10px);
             text-align: center;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-            min-height: 260px;
         }
 
         .mybid-badge {
@@ -177,14 +173,35 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
             font-weight: 700;
+            display: block;
         }
 
-        .mybid-ad-area {
+        .mybid-card-title {
+            font-size: 1.1rem;
+            color: #f8fafc;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+        }
+
+        .mybid-card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .mybid-action-btn {
+            display: block;
             width: 100%;
-            min-height: 210px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: linear-gradient(135deg, #a855f7, #6366f1);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 0;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+            box-sizing: border-box;
         }
 
         header {
@@ -550,12 +567,13 @@
                     <script src="//data527.click/js/responsive.js" async></script>
                 </div>
 
-                <!-- MYBID AD BOX WITH IFRAME FALLBACK SOLUTION -->
+                <!-- MYBID HIGH-CONVERTING CUSTOM NATIVE BOX -->
                 <div class="mybid-sidebar-box">
-                    <div class="mybid-badge">⚡ SPONSORED BY MYBID</div>
-                    <div class="mybid-ad-area" id="mybidTarget">
-                        <iframe id="mybidIframe" style="width:100%; height:200px; border:none; overflow:hidden;" scrolling="no"></iframe>
-                    </div>
+                    <span class="mybid-badge">⚡ SPONSORED BY MYBID</span>
+                    <h4 class="mybid-card-title">🔥 Trending Viral Content</h4>
+                    <p class="mybid-card-desc">Click below to watch exclusive unrestricted live stream feeds and updates.</p>
+                    <a href="https://omg10.com/4/11737854" target="_blank" class="mybid-action-btn">Explore Stream Now ➔</a>
+                    <div data-banner-id="2027802" style="display:none;"></div>
                 </div>
 
                 <div class="sidebar-widget">
@@ -569,30 +587,9 @@
     </div>
 
     <script src="//data527.click/js/responsive.js" async></script>
+    <script async src="https://js.mbidadm.com/static/scripts.js"></script>
 
     <script>
-        // Inject MyBid Ad via isolated Iframe execution
-        window.addEventListener('load', function() {
-            const iframe = document.getElementById('mybidIframe');
-            if (iframe) {
-                const doc = iframe.contentWindow.document;
-                doc.open();
-                doc.write(`
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                        <style>body{margin:0;padding:0;display:flex;justify-content:center;align-items:center;background:transparent;}</style>
-                        <script async src="https://js.mbidadm.com/static/scripts.js"><\/script>
-                    </head>
-                    <body>
-                        <div data-banner-id="2027802"></div>
-                    </body>
-                    </html>
-                `);
-                doc.close();
-            }
-        });
-
         const SUPABASE_URL = 'https://lxktfhinbdchhqgoutke.supabase.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_dABXCMeRrnUbouX9-AlYhw_ZEzDnJ7_';
 
