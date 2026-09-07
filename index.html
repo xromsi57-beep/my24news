@@ -180,16 +180,30 @@
             font-weight: 600;
         }
 
-        /* NEW MYBID AD CONTAINER */
+        /* MYBID SIDEBAR CONTAINER (NAME LABEL KE SATH) */
         .mybid-sidebar-box {
             background: var(--card-bg);
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            border: 1px solid rgba(16, 185, 129, 0.4);
             border-radius: 16px;
             padding: 15px 10px;
             margin-bottom: 20px;
             backdrop-filter: blur(10px);
             text-align: center;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mybid-badge {
+            font-size: 0.75rem;
+            color: #34d399;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
         header {
@@ -640,10 +654,10 @@
                     <script src="//data527.click/js/responsive.js" async></script>
                 </div>
 
-                <!-- NEW: MYBID AD UNIT BANNER (Format ID: 2027802) -->
+                <!-- MYBID AD BANNER (WITH CLEAR SPONSORED NAME) -->
                 <div class="mybid-sidebar-box">
-                    <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px; text-transform:uppercase; font-weight:600;">Sponsored Content</div>
-                    <div data-banner-id="2027802"></div>
+                    <div class="mybid-badge">🎯 Sponsored by MyBid</div>
+                    <div data-banner-id="2027802" style="width:100%; display:flex; justify-content:center;"></div>
                 </div>
 
                 <div class="sidebar-widget">
