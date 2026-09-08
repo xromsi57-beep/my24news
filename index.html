@@ -9,6 +9,9 @@
     <title>🚨 CRITICAL BREAKING NEWS 24/7 - LIVE EMERGENCY FEED</title>
     
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- [Company: Adcash] Library Script -->
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 
     <style>
         :root {
@@ -205,7 +208,7 @@
             transform: scale(1.03);
         }
 
-        .advertica-sidebar-box, .mybid-sidebar-box {
+        .advertica-sidebar-box, .adcash-sidebar-box {
             background: linear-gradient(135deg, #ffffff, #f0fdf4);
             border: 2px solid #bbf7d0;
             border-radius: 16px;
@@ -215,7 +218,7 @@
             box-shadow: 0 4px 20px rgba(52, 211, 153, 0.1);
         }
 
-        .advertica-badge, .mybid-badge {
+        .advertica-badge, .adcash-badge {
             font-size: 0.75rem;
             color: #065f46;
             background: #d1fae5;
@@ -600,7 +603,6 @@
         <span class="ticker-text">CRITICAL TRANSMISSION: Unrestricted Emergency Feed Active — Read Full Reports Immediately. Stay Tuned for Live Global Bulletins.</span>
     </div>
    </div>
-    </div>
 
     <div id="toastContainer"></div>
 
@@ -665,7 +667,7 @@
                     <div style="font-size:0.8rem; color:#0284c7; margin-bottom:8px; font-weight:900;">SPONSORED BULLETIN</div>
                     <div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
                          <iframe data-aa='2454542' src='//acceptable.a-ads.com/2454542/?size=Adaptive'
-                               style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
+                                style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
                     </div>
                 </div>
 
@@ -697,15 +699,18 @@
                     <script src="//data527.click/js/responsive.js" async></script>
                 </div>
 
-                <!-- [Ad Company: MyBid] Sidebar Ad -->
+                <!-- [Ad Company: Adcash] Sidebar Ad -->
                 <div style="background: #e0f2fe; color: #0369a1; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #bae6fd; border-bottom: none;">
-        📢 [Ad Company: MyBid.com] - Native Banner Widget
-    </div>
-    <div class="mybid-sidebar-box" style="background: linear-gradient(135deg, #ffffff, #eff6ff); border: 2px solid #bae6fd; border-radius: 0 0 16px 16px; padding: 15px; margin-bottom: 20px; text-align: center;">
-        <span class="mybid-badge" style="background: #bae6fd; color: #0369a1;">💙 FLASH MYBID</span>
-        <div data-banner-id="2027802"></div>
-        <script async src="https://js.mbidadm.com/static/scripts.js" data-admpid="462845"></script>
-    </div>
+                    📢 [Ad Company: Adcash] - Auto Tag Widget
+                </div>
+                <div class="adcash-sidebar-box" style="background: linear-gradient(135deg, #ffffff, #eff6ff); border: 2px solid #bae6fd; border-radius: 0 0 16px 16px; padding: 15px; margin-bottom: 20px; text-align: center;">
+                    <span class="adcash-badge" style="background: #bae6fd; color: #0369a1;">💙 ADDCASH TAG</span>
+                    <script type="text/javascript">
+                        aclib.runAutoTag({
+                            zoneId: 'whrjauka4z',
+                        });
+                    </script>
+                </div>
 
                 <div class="sidebar-widget">
                     <h3>Network Status</h3>
