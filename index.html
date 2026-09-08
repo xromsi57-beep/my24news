@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Ad Company: Clickadu (Domain / Meta Verification Tag) -->
     <meta name="clckd" content="408d049f20483ea45eb96af97eb7d495" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🚨 CRITICAL BREAKING NEWS 24/7 - LIVE EMERGENCY FEED</title>
@@ -519,6 +520,10 @@
 
     <div id="toastContainer"></div>
 
+    <!-- Ad Company Label: Clickadu / Smartlink -->
+    <div style="background: #111; color: #ff9999; font-size: 11px; text-align: center; padding: 4px; font-weight: bold; border-bottom: 1px dashed #ff1a1a;">
+        [Ad Company: Clickadu / Direct Link]
+    </div>
     <div class="sticky-bottom-ad">
         <div class="sticky-ad-content">
             <span>🔴</span>
@@ -568,7 +573,11 @@
             <div class="news-feed">
                 <h2>🚨 Live Red Alerts</h2>
                 
-                <div class="first-banner-ad-box">
+                <!-- Ad Company Label: A-ADS -->
+                <div style="background: #111; color: #ff9999; font-size: 11px; text-align: center; padding: 4px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #ff1a1a; border-bottom: none;">
+                    [Ad Company: A-ADS]
+                </div>
+                <div class="first-banner-ad-box" style="border-radius: 0 0 16px 16px;">
                     <div style="font-size:0.8rem; color:#ff4d4d; margin-bottom:8px; font-weight:900;">SPONSORED RED ALERT BULLETIN</div>
                     <div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
                          <iframe data-aa='2454542' src='//acceptable.a-ads.com/2454542/?size=Adaptive'
@@ -583,20 +592,32 @@
 
             <aside class="sidebar">
                 
-                <div class="interactive-reward-banner">
+                <!-- Ad Company Label: Adsterra / ProfitableRateCPM -->
+                <div style="background: #111; color: #ff9999; font-size: 11px; text-align: center; padding: 4px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #ff1a1a; border-bottom: none;">
+                    [Ad Company: Adsterra / ProfitableRateCPM]
+                </div>
+                <div class="interactive-reward-banner" style="border-radius: 0 0 16px 16px;">
                     <span class="reward-badge">🔥 RED HOT OFFER</span>
                     <h3>Emergency Bonus Rewards</h3>
                     <p>Click below to unlock classified red-tier broadcast feeds instantly.</p>
                     <a href="https://www.profitableratecpmnetwork.com/fcsxqmrtf?key=77785123756f4a00c1f2d566da9c0500" target="_blank" class="interactive-claim-btn">CLAIM RED REWARD</a>
                 </div>
 
-                <div class="advertica-sidebar-box">
+                <!-- Ad Company Label: Advertica -->
+                <div style="background: #111; color: #ff9999; font-size: 11px; text-align: center; padding: 4px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #ff1a1a; border-bottom: none;">
+                    [Ad Company: Advertica]
+                </div>
+                <div class="advertica-sidebar-box" style="border-radius: 0 0 16px 16px;">
                     <div class="advertica-badge">⚡ PRIORITY RED ADVERTICA</div>
                     <ins style="width: 0px;height:0px" data-width="0" data-height="0" class="h4930b1d51b" data-domain="//data527.click" data-affquery="/ab884ae6fb96d85e7a23/4930b1d51b/?placementName=advertica"></ins>
                     <script src="//data527.click/js/responsive.js" async></script>
                 </div>
 
-                <div class="mybid-sidebar-box">
+                <!-- Ad Company Label: MyBid -->
+                <div style="background: #111; color: #ff9999; font-size: 11px; text-align: center; padding: 4px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #ff1a1a; border-bottom: none;">
+                    [Ad Company: MyBid]
+                </div>
+                <div class="mybid-sidebar-box" style="border-radius: 0 0 16px 16px;">
                     <span class="mybid-badge">⚡ FLASH RED MYBID</span>
                     <div data-banner-id="2027805"></div>
                     <script async src="https://js.mbidadm.com/static/scripts.js" data-admpid="462845"></script>
@@ -713,8 +734,15 @@
 
                 if (index === 0) {
                     const adBox = document.createElement('div');
-                    adBox.className = 'infeed-ad-box';
+                    // Ad Company Label for In-Feed Ad
                     adBox.innerHTML = `
+                        <div style="background: #111; color: #ff9999; font-size: 11px; text-align: center; padding: 4px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #ff1a1a; border-bottom: none;">
+                            [Ad Company: Advertica In-Feed]
+                        </div>
+                    `;
+                    adBox.className = 'infeed-ad-box';
+                    adBox.style.borderRadius = '0 0 16px 16px';
+                    adBox.innerHTML += `
                         <div style="font-size:0.8rem; color:#ff4d4d; margin-bottom:8px; font-weight:900;">SPONSORED RED ALERT UPDATE</div>
                         <div id="third-ad-wrapper"></div>
                     `;
