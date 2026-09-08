@@ -10,13 +10,13 @@
 
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --card-border: rgba(255, 255, 255, 0.1);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #6366f1;
-            --accent-hover: #4f46e5;
+            --bg-gradient: linear-gradient(135deg, #06130d 0%, #0f291e 100%);
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --card-border: rgba(16, 185, 129, 0.15);
+            --text-main: #f0fdf4;
+            --text-muted: #86efac;
+            --accent: #10b981;
+            --accent-hover: #059669;
             --danger: #ef4444;
             --success: #10b981;
         }
@@ -36,9 +36,9 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(6, 19, 13, 0.95);
             backdrop-filter: blur(12px);
-            border-top: 1px solid rgba(129, 140, 248, 0.3);
+            border-top: 1px solid rgba(16, 185, 129, 0.3);
             padding: 12px 20px;
             display: flex;
             justify-content: space-between;
@@ -57,7 +57,7 @@
         .sticky-ad-text h4 {
             margin: 0;
             font-size: 0.9rem;
-            color: #c084fc;
+            color: #34d399;
         }
 
         .sticky-ad-text p {
@@ -67,7 +67,7 @@
         }
 
         .sticky-cta-btn {
-            background: linear-gradient(135deg, #6366f1, #a855f7);
+            background: linear-gradient(135deg, #10b981, #059669);
             color: white;
             text-decoration: none;
             padding: 8px 18px;
@@ -75,33 +75,33 @@
             font-weight: 600;
             font-size: 0.85rem;
             transition: opacity 0.3s, transform 0.2s;
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
             white-space: nowrap;
         }
 
         .interactive-reward-banner {
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(139, 92, 246, 0.2));
-            border: 2px dashed rgba(236, 72, 153, 0.5);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.2));
+            border: 2px dashed rgba(16, 185, 129, 0.5);
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 25px;
             text-align: center;
             backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(236, 72, 153, 0.15);
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.15);
             position: relative;
             overflow: hidden;
             animation: borderPulse 3s infinite;
         }
 
         @keyframes borderPulse {
-            0% { border-color: rgba(236, 72, 153, 0.4); }
-            50% { border-color: rgba(236, 72, 153, 0.9); }
-            100% { border-color: rgba(236, 72, 153, 0.4); }
+            0% { border-color: rgba(16, 185, 129, 0.4); }
+            50% { border-color: rgba(16, 185, 129, 0.9); }
+            100% { border-color: rgba(16, 185, 129, 0.4); }
         }
 
         .reward-badge {
             display: inline-block;
-            background: #ec4899;
+            background: #10b981;
             color: white;
             font-size: 0.75rem;
             font-weight: 700;
@@ -114,7 +114,7 @@
         .interactive-reward-banner h3 {
             margin: 5px 0 8px;
             font-size: 1.25rem;
-            color: #f472b6;
+            color: #34d399;
         }
 
         .interactive-reward-banner p {
@@ -125,19 +125,19 @@
 
         .interactive-claim-btn {
             display: inline-block;
-            background: linear-gradient(135deg, #ec4899, #8b5cf6);
+            background: linear-gradient(135deg, #10b981, #047857);
             color: white;
             text-decoration: none;
             padding: 10px 24px;
             border-radius: 8px;
             font-weight: 700;
             font-size: 0.95rem;
-            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
         }
 
         .advertica-sidebar-box {
             background: var(--card-bg);
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            border: 1px solid rgba(16, 185, 129, 0.3);
             border-radius: 16px;
             padding: 15px 10px;
             margin-bottom: 20px;
@@ -155,10 +155,9 @@
             font-weight: 600;
         }
 
-        /* MYBID BANNER CONTAINER FIXED */
         .mybid-sidebar-box {
             background: var(--card-bg);
-            border: 1px solid rgba(168, 85, 247, 0.4);
+            border: 1px solid rgba(52, 211, 153, 0.4);
             border-radius: 16px;
             padding: 15px;
             margin-bottom: 20px;
@@ -175,7 +174,7 @@
 
         .mybid-badge {
             font-size: 0.75rem;
-            color: #a855f7;
+            color: #34d399;
             margin-bottom: 12px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
@@ -187,14 +186,14 @@
             text-align: center;
             padding: 40px 20px;
             border-bottom: 1px solid var(--card-border);
-            background: rgba(15, 23, 42, 0.6);
+            background: rgba(6, 19, 13, 0.6);
             backdrop-filter: blur(10px);
         }
 
         header h1 {
             margin: 0;
             font-size: 2.8rem;
-            background: linear-gradient(to right, #818cf8, #c084fc);
+            background: linear-gradient(to right, #34d399, #6ee7b7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 800;
@@ -276,7 +275,7 @@
         .sidebar-widget h3 {
             margin-top: 0;
             font-size: 1.1rem;
-            color: #c084fc;
+            color: #34d399;
             margin-bottom: 15px;
         }
 
@@ -296,7 +295,7 @@
 
         .admin-panel h2 {
             margin-top: 0;
-            color: #818cf8;
+            color: #34d399;
             font-size: 1.4rem;
             display: flex;
             justify-content: space-between;
@@ -325,7 +324,7 @@
         .form-group input, .form-group textarea {
             width: 100%;
             padding: 12px;
-            background: rgba(15, 23, 42, 0.5);
+            background: rgba(6, 19, 13, 0.5);
             border: 1px solid var(--card-border);
             border-radius: 8px;
             color: var(--text-main);
@@ -401,7 +400,7 @@
 
         .news-content {
             line-height: 1.7;
-            color: #cbd5e1;
+            color: #d1fae5;
             white-space: pre-wrap;
             font-size: 1.05rem;
         }
@@ -414,9 +413,9 @@
         }
 
         .share-btn {
-            background: rgba(99, 102, 241, 0.15);
-            color: #a5b4fc;
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            background: rgba(16, 185, 129, 0.15);
+            color: #6ee7b7;
+            border: 1px solid rgba(16, 185, 129, 0.3);
             padding: 6px 14px;
             font-size: 0.85rem;
             border-radius: 6px;
@@ -449,7 +448,7 @@
         }
 
         .toast {
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(6, 19, 13, 0.95);
             border: 1px solid var(--card-border);
             color: var(--text-main);
             padding: 12px 20px;
@@ -522,7 +521,7 @@
                     <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">Sponsored Banner Ad</div>
                     <div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
                          <iframe data-aa='2454542' src='//acceptable.a-ads.com/2454542/?size=Adaptive'
-                                     style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
+                                 style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
                     </div>
                 </div>
 
@@ -546,7 +545,6 @@
                     <script src="//data527.click/js/responsive.js" async></script>
                 </div>
 
-                <!-- MYBID OFFICIALLY INTEGRATED CODE -->
                 <div class="mybid-sidebar-box">
                     <span class="mybid-badge">⚡ SPONSORED BY MYBID</span>
                     <div data-banner-id="2027805"></div>
