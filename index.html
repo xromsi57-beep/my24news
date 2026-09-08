@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="clckd" content="408d049f20483ea45eb96af97eb7d495" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chronicle 24/7 - Live Global News</title>
+    <title>🚨 CRITICAL BREAKING NEWS 24/7 - LIVE EMERGENCY FEED</title>
     
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #06130d 0%, #0f291e 100%);
-            --card-bg: rgba(255, 255, 255, 0.04);
-            --card-border: rgba(16, 185, 129, 0.15);
-            --text-main: #f0fdf4;
-            --text-muted: #86efac;
-            --accent: #10b981;
-            --accent-hover: #059669;
+            --bg-gradient: linear-gradient(135deg, #090202 0%, #1c0606 100%);
+            --card-bg: rgba(20, 5, 5, 0.85);
+            --card-border: rgba(239, 68, 68, 0.4);
+            --text-main: #fff5f5;
+            --text-muted: #fca5a5;
+            --accent: #dc2626;
+            --accent-hover: #b91c1c;
             --danger: #ef4444;
             --success: #10b981;
+            --warning: #facc15;
         }
 
         body {
@@ -31,20 +32,51 @@
             padding-bottom: 90px;
         }
 
+        /* BREAKING TICKER TOP BAR */
+        .breaking-ticker {
+            background: #991b1b;
+            color: white;
+            padding: 8px 15px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 2px solid #f87171;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.5);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .breaking-badge-pill {
+            background: #facc15;
+            color: #000;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            animation: flashPulse 1s infinite alternate;
+        }
+
+        @keyframes flashPulse {
+            0% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
         .sticky-bottom-ad {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(6, 19, 13, 0.95);
+            background: rgba(15, 5, 5, 0.98);
             backdrop-filter: blur(12px);
-            border-top: 1px solid rgba(16, 185, 129, 0.3);
+            border-top: 2px solid var(--danger);
             padding: 12px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 -6px 25px rgba(239, 68, 68, 0.4);
             box-sizing: border-box;
         }
 
@@ -56,8 +88,9 @@
 
         .sticky-ad-text h4 {
             margin: 0;
-            font-size: 0.9rem;
-            color: #34d399;
+            font-size: 0.95rem;
+            color: var(--warning);
+            font-weight: 700;
         }
 
         .sticky-ad-text p {
@@ -67,44 +100,43 @@
         }
 
         .sticky-cta-btn {
-            background: linear-gradient(135deg, #10b981, #059669);
+            background: linear-gradient(135deg, #dc2626, #ef4444);
             color: white;
             text-decoration: none;
             padding: 8px 18px;
             border-radius: 6px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.85rem;
-            transition: opacity 0.3s, transform 0.2s;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.7);
+            animation: pulseBtn 1.5s infinite;
             white-space: nowrap;
         }
 
+        @keyframes pulseBtn {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
         .interactive-reward-banner {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.2));
-            border: 2px dashed rgba(16, 185, 129, 0.5);
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.2), rgba(250, 204, 21, 0.15));
+            border: 2px solid var(--warning);
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 25px;
             text-align: center;
             backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.15);
+            box-shadow: 0 0 25px rgba(250, 204, 21, 0.25);
             position: relative;
             overflow: hidden;
-            animation: borderPulse 3s infinite;
-        }
-
-        @keyframes borderPulse {
-            0% { border-color: rgba(16, 185, 129, 0.4); }
-            50% { border-color: rgba(16, 185, 129, 0.9); }
-            100% { border-color: rgba(16, 185, 129, 0.4); }
         }
 
         .reward-badge {
             display: inline-block;
-            background: #10b981;
-            color: white;
+            background: var(--warning);
+            color: #000;
             font-size: 0.75rem;
-            font-weight: 700;
+            font-weight: 800;
             padding: 3px 10px;
             border-radius: 20px;
             margin-bottom: 8px;
@@ -114,7 +146,7 @@
         .interactive-reward-banner h3 {
             margin: 5px 0 8px;
             font-size: 1.25rem;
-            color: #34d399;
+            color: var(--warning);
         }
 
         .interactive-reward-banner p {
@@ -125,84 +157,63 @@
 
         .interactive-claim-btn {
             display: inline-block;
-            background: linear-gradient(135deg, #10b981, #047857);
-            color: white;
+            background: linear-gradient(135deg, #facc15, #ca8a04);
+            color: #000;
             text-decoration: none;
             padding: 10px 24px;
             border-radius: 8px;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 0.95rem;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+            box-shadow: 0 4px 15px rgba(250, 204, 21, 0.4);
         }
 
-        .advertica-sidebar-box {
+        .advertica-sidebar-box, .mybid-sidebar-box {
             background: var(--card-bg);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            border-radius: 16px;
-            padding: 15px 10px;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        .advertica-badge {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        .mybid-sidebar-box {
-            background: var(--card-bg);
-            border: 1px solid rgba(52, 211, 153, 0.4);
+            border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 15px;
             margin-bottom: 20px;
             backdrop-filter: blur(10px);
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-            min-height: 250px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         }
 
-        .mybid-badge {
+        .advertica-badge, .mybid-badge {
             font-size: 0.75rem;
-            color: #34d399;
-            margin-bottom: 12px;
+            color: var(--warning);
+            margin-bottom: 10px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            font-weight: 700;
-            display: block;
+            font-weight: 800;
         }
 
         header {
             text-align: center;
-            padding: 40px 20px;
-            border-bottom: 1px solid var(--card-border);
-            background: rgba(6, 19, 13, 0.6);
+            padding: 35px 20px;
+            border-bottom: 3px solid var(--danger);
+            background: rgba(10, 2, 2, 0.9);
             backdrop-filter: blur(10px);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.8rem;
-            background: linear-gradient(to right, #34d399, #6ee7b7);
+            font-size: 3rem;
+            background: linear-gradient(to right, #ef4444, #facc15);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 800;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 0 30px rgba(239, 68, 68, 0.5);
         }
 
         header p {
-            margin: 10px 0 0;
-            color: var(--text-muted);
+            margin: 8px 0 0;
+            color: var(--warning);
             font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .container {
@@ -218,13 +229,14 @@
         }
 
         .login-trigger-btn {
-            background: transparent;
+            background: rgba(239, 68, 68, 0.1);
             color: var(--text-muted);
             border: 1px solid var(--card-border);
             padding: 8px 16px;
             border-radius: 8px;
             cursor: pointer;
             font-size: 0.9rem;
+            font-weight: 600;
         }
 
         .search-bar-container {
@@ -235,13 +247,17 @@
             width: 100%;
             padding: 14px 20px;
             background: var(--card-bg);
-            border: 1px solid var(--card-border);
+            border: 2px solid var(--card-border);
             border-radius: 12px;
             color: var(--text-main);
             font-size: 1rem;
             outline: none;
-            backdrop-filter: blur(10px);
             box-sizing: border-box;
+        }
+
+        .search-input:focus {
+            border-color: var(--danger);
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
         }
 
         .main-layout {
@@ -268,25 +284,24 @@
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 20px;
-            backdrop-filter: blur(10px);
             text-align: center;
         }
 
         .sidebar-widget h3 {
             margin-top: 0;
             font-size: 1.1rem;
-            color: #34d399;
+            color: var(--warning);
             margin-bottom: 15px;
         }
 
         .admin-panel {
             background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(12px);
+            border: 2px solid var(--danger);
             padding: 25px;
             border-radius: 16px;
             margin-bottom: 30px;
             display: none;
+            box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
         }
 
         .admin-panel.active {
@@ -295,7 +310,7 @@
 
         .admin-panel h2 {
             margin-top: 0;
-            color: #34d399;
+            color: var(--warning);
             font-size: 1.4rem;
             display: flex;
             justify-content: space-between;
@@ -324,7 +339,7 @@
         .form-group input, .form-group textarea {
             width: 100%;
             padding: 12px;
-            background: rgba(6, 19, 13, 0.5);
+            background: rgba(10, 2, 2, 0.8);
             border: 1px solid var(--card-border);
             border-radius: 8px;
             color: var(--text-main);
@@ -333,28 +348,27 @@
             outline: none;
         }
 
-        .form-group textarea {
-            resize: vertical;
-            height: 120px;
-        }
-
         button.primary-btn {
-            background: var(--accent);
+            background: var(--danger);
             color: white;
             border: none;
             padding: 12px 24px;
             font-size: 1rem;
             border-radius: 8px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 800;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
         }
 
         .news-feed h2 {
             font-size: 1.5rem;
             margin-bottom: 25px;
-            border-left: 4px solid var(--accent);
+            border-left: 5px solid var(--danger);
             padding-left: 12px;
             margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--warning);
         }
 
         .first-banner-ad-box, .infeed-ad-box {
@@ -364,22 +378,35 @@
             padding: 20px;
             margin-bottom: 25px;
             text-align: center;
-            backdrop-filter: blur(8px);
         }
 
         .news-card {
             background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(8px);
+            border: 2px solid var(--card-border);
             padding: 25px;
             border-radius: 16px;
             margin-bottom: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--danger);
         }
 
         .news-card h3 {
             margin-top: 0;
-            font-size: 1.5rem;
-            color: var(--text-main);
+            font-size: 1.6rem;
+            color: #fff;
+            font-weight: 800;
+            line-height: 1.3;
         }
 
         .news-meta-info {
@@ -392,15 +419,17 @@
 
         .news-date, .read-time {
             font-size: 0.8rem;
-            color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.05);
+            color: var(--warning);
+            background: rgba(250, 204, 21, 0.1);
+            border: 1px solid rgba(250, 204, 21, 0.3);
             padding: 4px 10px;
             border-radius: 20px;
+            font-weight: 700;
         }
 
         .news-content {
             line-height: 1.7;
-            color: #d1fae5;
+            color: #f1f5f9;
             white-space: pre-wrap;
             font-size: 1.05rem;
         }
@@ -413,19 +442,20 @@
         }
 
         .share-btn {
-            background: rgba(16, 185, 129, 0.15);
-            color: #6ee7b7;
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            background: rgba(250, 204, 21, 0.15);
+            color: var(--warning);
+            border: 1px solid rgba(250, 204, 21, 0.4);
             padding: 6px 14px;
             font-size: 0.85rem;
             border-radius: 6px;
             cursor: pointer;
+            font-weight: 700;
         }
 
         .delete-btn {
-            background: rgba(239, 68, 68, 0.15);
+            background: rgba(239, 68, 68, 0.2);
             color: #fca5a5;
-            border: 1px solid rgba(239, 68, 68, 0.3);
+            border: 1px solid rgba(239, 68, 68, 0.4);
             padding: 6px 14px;
             font-size: 0.85rem;
             border-radius: 6px;
@@ -448,77 +478,82 @@
         }
 
         .toast {
-            background: rgba(6, 19, 13, 0.95);
-            border: 1px solid var(--card-border);
+            background: rgba(20, 5, 5, 0.95);
+            border: 1px solid var(--danger);
             color: var(--text-main);
             padding: 12px 20px;
             border-radius: 10px;
-            backdrop-filter: blur(10px);
             font-size: 0.9rem;
             display: flex;
             align-items: center;
             gap: 10px;
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
         }
 
-        .toast.success { border-left: 4px solid var(--success); }
-        .toast.error { border-left: 4px solid var(--danger); }
+        .toast.success { border-left: 5px solid var(--success); }
+        .toast.error { border-left: 5px solid var(--danger); }
     </style>
 </head>
 <body>
+
+    <div class="breaking-ticker">
+        <span class="breaking-badge-pill">🔴 LIVE ALERT</span>
+        <span>BREAKING: Global Emergency Broadcast Active — Read Full Reports Below Before Updates Refresh.</span>
+    </div>
 
     <div id="toastContainer"></div>
 
     <div class="sticky-bottom-ad">
         <div class="sticky-ad-content">
-            <span>🔴</span>
+            <span>🚨</span>
             <div class="sticky-ad-text">
-                <h4>Special Live Stream Feed</h4>
-                <p>Click to access unrestricted live broadcasts.</p>
+                <h4>CRITICAL LIVE FEED STREAM</h4>
+                <p>Click to access restricted emergency coverage immediately.</p>
             </div>
         </div>
-        <a href="https://omg10.com/4/11737854" target="_blank" class="sticky-cta-btn">Watch Now</a>
+        <a href="https://omg10.com/4/11737854" target="_blank" class="sticky-cta-btn">WATCH LIVE STREAM</a>
     </div>
 
     <header>
-        <h1>Chronicle 24/7</h1>
-        <p>Your Live Global News Stream</p>
+        <h1>CHRONICLE 24/7</h1>
+        <p>⚡ Emergency Global Breaking News Network ⚡</p>
     </header>
 
     <div class="container">
         
         <div class="top-action-bar">
-            <button class="login-trigger-btn" id="toggleLoginBtn" onclick="handleAdminAccess()">🔒 Admin Portal</button>
+            <button class="login-trigger-btn" id="toggleLoginBtn" onclick="handleAdminAccess()">🔒 Admin Emergency Portal</button>
         </div>
 
         <div class="search-bar-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search live news headlines or stories..." oninput="filterNews()">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search breaking headlines or emergency stories..." oninput="filterNews()">
         </div>
 
         <div class="admin-panel" id="adminPanel">
             <h2>
-                <span>📢 Publish New Article</span>
+                <span>📢 Broadcast Critical Alert</span>
                 <button class="close-admin" onclick="closeAdminPanel()">✕</button>
             </h2>
             <form id="newsForm">
                 <div class="form-group">
-                    <label for="title">Headline</label>
-                    <input type="text" id="title" required placeholder="Catchy news headline...">
+                    <label for="title">Breaking Headline</label>
+                    <input type="text" id="title" required placeholder="URGENT: Catchy critical headline...">
                 </div>
                 <div class="form-group">
-                    <label for="content">Full Story</label>
-                    <textarea id="content" required placeholder="Write the complete news report here..."></textarea>
+                    <label for="content">Emergency Report</label>
+                    <textarea id="content" required placeholder="Write the full urgent news details here..." style="height: 120px; resize: vertical;"></textarea>
                 </div>
-                <button type="submit" class="primary-btn" id="publishBtn">Publish to Cloud</button>
+                <button type="submit" class="primary-btn" id="publishBtn">BROADCAST NOW</button>
             </form>
         </div>
 
         <div class="main-layout">
             
             <div class="news-feed">
-                <h2>Live Feed</h2>
+                <h2>🔴 Live Breaking Feed</h2>
                 
                 <div class="first-banner-ad-box">
-                    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">Sponsored Banner Ad</div>
+                    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px; font-weight:700;">SPONSORED EMERGENCY BULLETIN</div>
                     <div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
                          <iframe data-aa='2454542' src='//acceptable.a-ads.com/2454542/?size=Adaptive'
                                  style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
@@ -526,34 +561,34 @@
                 </div>
 
                 <div id="newsContainer">
-                    <div class="loading-text" style="text-align: center; color: var(--text-muted); padding: 40px;">Connecting to live feed...</div>
+                    <div class="loading-text" style="text-align: center; color: var(--warning); padding: 40px; font-weight:700;">Connecting to secure live broadcast server...</div>
                 </div>
             </div>
 
             <aside class="sidebar">
                 
                 <div class="interactive-reward-banner">
-                    <span class="reward-badge">⭐ Special Offer</span>
-                    <h3>Exclusive Bonus Rewards</h3>
-                    <p>Click below to unlock premium access & rewards instantly.</p>
-                    <a href="https://www.profitableratecpmnetwork.com/fcsxqmrtf?key=77785123756f4a00c1f2d566da9c0500" target="_blank" class="interactive-claim-btn">Claim Reward Now</a>
+                    <span class="reward-badge">⭐ EXCLUSIVE ACCESS</span>
+                    <h3>Emergency Bonus Rewards</h3>
+                    <p>Click below to unlock restricted live feeds instantly.</p>
+                    <a href="https://www.profitableratecpmnetwork.com/fcsxqmrtf?key=77785123756f4a00c1f2d566da9c0500" target="_blank" class="interactive-claim-btn">CLAIM ACCESS NOW</a>
                 </div>
 
                 <div class="advertica-sidebar-box">
-                    <div class="advertica-badge">⚡ SPONSORED BY ADVERTICA</div>
+                    <div class="advertica-badge">⚡ PRIORITY BULLETIN ADVERTICA</div>
                     <ins style="width: 0px;height:0px" data-width="0" data-height="0" class="h4930b1d51b" data-domain="//data527.click" data-affquery="/ab884ae6fb96d85e7a23/4930b1d51b/?placementName=advertica"></ins>
                     <script src="//data527.click/js/responsive.js" async></script>
                 </div>
 
                 <div class="mybid-sidebar-box">
-                    <span class="mybid-badge">⚡ SPONSORED BY MYBID</span>
+                    <span class="mybid-badge">⚡ FLASH UPDATE MYBID</span>
                     <div data-banner-id="2027805"></div>
                     <script async src="https://js.mbidadm.com/static/scripts.js" data-admpid="462845"></script>
                 </div>
 
                 <div class="sidebar-widget">
-                    <h3>Channel Updates</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Stay tuned for real-time updates and global news live streams.</p>
+                    <h3>System Status</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0; font-weight:600;">All networks transmitting live. Do not close window.</p>
                 </div>
             </aside>
 
@@ -582,7 +617,7 @@
             const container = document.getElementById('toastContainer');
             const toast = document.createElement('div');
             toast.className = `toast ${type}`;
-            toast.innerHTML = `<span>${type === 'success' ? '✅' : '⚠️'}</span> ${message}`;
+            toast.innerHTML = `<span>${type === 'success' ? '🚨' : '⚠️'}</span> ${message}`;
             container.appendChild(toast);
             setTimeout(() => toast.remove(), 3000);
         }
@@ -593,15 +628,15 @@
                 return;
             }
 
-            const password = prompt("Enter Admin Secret Password:");
+            const password = prompt("Enter Admin Emergency Password:");
             if (password === "admin123") {
                 isAdminLoggedIn = true;
                 adminPanel.classList.add('active');
-                document.getElementById('toggleLoginBtn').textContent = "🔓 Admin Panel Open";
+                document.getElementById('toggleLoginBtn').textContent = "🔓 Emergency Panel Unlocked";
                 renderNews(allNewsData);
-                showToast("Admin Login Successful!");
+                showToast("Admin Security Verified!");
             } else if (password !== null) {
-                showToast("Incorrect Password!", "error");
+                showToast("Access Denied: Incorrect Password!", "error");
             }
         };
 
@@ -617,7 +652,7 @@
 
             if (error) {
                 console.error('Error fetching news:', error);
-                newsContainer.innerHTML = '<div class="empty-text" style="text-align:center; color:var(--text-muted); padding:40px;">Failed to load news.</div>';
+                newsContainer.innerHTML = '<div class="empty-text" style="text-align:center; color:var(--text-muted); padding:40px;">Failed to load critical feeds.</div>';
                 return;
             }
 
@@ -629,7 +664,7 @@
             newsContainer.innerHTML = '';
 
             if (!dataList || dataList.length === 0) {
-                newsContainer.innerHTML = '<div class="empty-text" style="text-align:center; color:var(--text-muted); padding:40px;">No matching news found.</div>';
+                newsContainer.innerHTML = '<div class="empty-text" style="text-align:center; color:var(--text-muted); padding:40px;">No breaking news bulletins right now.</div>';
                 return;
             }
 
@@ -647,15 +682,15 @@
                 const deleteBtnClass = isAdminLoggedIn ? "delete-btn admin-visible" : "delete-btn";
 
                 card.innerHTML = `
-                    <h3>${escapeHtml(news.title)}</h3>
+                    <h3>🔥 ${escapeHtml(news.title)}</h3>
                     <div class="news-meta-info">
                         <span class="news-date">📅 ${dateStr}</span>
                         <span class="read-time">⏱️ ${readTime} min read</span>
                     </div>
                     <div class="news-content">${escapeHtml(news.content)}</div>
                     <div class="card-actions">
-                        <button class="share-btn" onclick="shareArticle('${escapeHtml(news.title).replace(/'/g, "\\'")}')">🔗 Share</button>
-                        <button class="${deleteBtnClass}" onclick="deleteNewsItem(${news.id})">🗑️ Delete Article</button>
+                        <button class="share-btn" onclick="shareArticle('${escapeHtml(news.title).replace(/'/g, "\\'")}')">🔗 Share Bulletin</button>
+                        <button class="${deleteBtnClass}" onclick="deleteNewsItem(${news.id})">🗑️ Delete Bulletin</button>
                     </div>
                 `;
                 newsContainer.appendChild(card);
@@ -664,7 +699,7 @@
                     const adBox = document.createElement('div');
                     adBox.className = 'infeed-ad-box';
                     adBox.innerHTML = `
-                        <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px;">Sponsored Content</div>
+                        <div style="font-size:0.8rem; color:var(--warning); margin-bottom:8px; font-weight:700;">SPONSORED EMERGENCY UPDATE</div>
                         <div id="third-ad-wrapper"></div>
                     `;
                     newsContainer.appendChild(adBox);
@@ -689,7 +724,7 @@
         window.shareArticle = function(title) {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(window.location.href);
-                showToast(`Link copied for: "${title.substring(0, 25)}..."`);
+                showToast(`Emergency link copied for: "${title.substring(0, 25)}..."`);
             } else {
                 showToast("Unable to copy link", "error");
             }
@@ -700,7 +735,7 @@
             if (!isAdminLoggedIn) return;
 
             publishBtn.disabled = true;
-            publishBtn.textContent = "Publishing...";
+            publishBtn.textContent = "BROADCASTING...";
 
             const title = document.getElementById('title').value;
             const content = document.getElementById('content').value;
@@ -710,21 +745,21 @@
                 .insert([{ title, content }]);
 
             publishBtn.disabled = false;
-            publishBtn.textContent = "Publish to Cloud";
+            publishBtn.textContent = "BROADCAST NOW";
 
             if (error) {
-                showToast("Error publishing: " + error.message, "error");
+                showToast("Error broadcasting: " + error.message, "error");
             } else {
                 newsForm.reset();
                 adminPanel.classList.remove('active');
-                showToast("Article published successfully!");
+                showToast("Emergency bulletin broadcasted!");
                 fetchNews();
             }
         });
 
         window.deleteNewsItem = async function(id) {
             if (!isAdminLoggedIn) return;
-            if (confirm("Are you sure you want to delete this news?")) {
+            if (confirm("Are you sure you want to delete this breaking alert?")) {
                 const { error } = await _supabase
                     .from('news')
                     .delete()
@@ -733,7 +768,7 @@
                 if (error) {
                     showToast("Error deleting: " + error.message, "error");
                 } else {
-                    showToast("Article deleted.");
+                    showToast("Bulletin deleted.");
                     fetchNews();
                 }
             }
