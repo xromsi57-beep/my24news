@@ -12,22 +12,19 @@
 
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #090202 0%, #1c0606 100%);
-            --card-bg: rgba(25, 5, 5, 0.9);
-            --card-border: rgba(239, 68, 68, 0.7);
-            --text-main: #fff5f5;
-            --text-muted: #fca5a5;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --card-border: #e2e8f0;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
             --accent: #dc2626;
-            --accent-hover: #b91c1c;
-            --danger: #ef4444;
             --success: #10b981;
-            --warning: #facc15;
             --alert-red: #ff1a1a;
         }
 
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: var(--bg-gradient);
+            background: var(--bg-color);
             color: var(--text-main);
             min-height: 100vh;
             margin: 0;
@@ -71,7 +68,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(15, 2, 2, 0.98);
+            background: #ffffff;
             backdrop-filter: blur(12px);
             border-top: 3px solid var(--alert-red);
             padding: 12px 20px;
@@ -79,7 +76,7 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            box-shadow: 0 -8px 30px rgba(255, 26, 26, 0.6);
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
         }
 
@@ -92,9 +89,8 @@
         .sticky-ad-text h4 {
             margin: 0;
             font-size: 0.95rem;
-            color: #ff4d4d;
+            color: #dc2626;
             font-weight: 800;
-            text-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
         }
 
         .sticky-ad-text p {
@@ -112,47 +108,43 @@
             font-weight: 900;
             font-size: 0.85rem;
             border: 1px solid #ff9999;
-            box-shadow: 0 0 20px rgba(255, 26, 26, 0.9);
+            box-shadow: 0 0 15px rgba(255, 26, 26, 0.4);
             animation: pulseBtn 1.2s infinite;
             white-space: nowrap;
         }
 
         @keyframes pulseBtn {
-            0% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 26, 26, 0.7); }
-            50% { transform: scale(1.06); box-shadow: 0 0 25px rgba(255, 26, 26, 1); }
-            100% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 26, 26, 0.7); }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+            100% { transform: scale(1); }
         }
 
         .interactive-reward-banner {
-            background: linear-gradient(135deg, rgba(255, 26, 26, 0.25), rgba(20, 5, 5, 0.95));
-            border: 2px solid var(--alert-red);
+            background: #ffffff;
+            border: 2px solid #fee2e2;
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 25px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 30px rgba(255, 26, 26, 0.4);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         .reward-badge {
             display: inline-block;
-            background: var(--alert-red);
-            color: white;
+            background: #fee2e2;
+            color: #dc2626;
             font-size: 0.75rem;
             font-weight: 900;
             padding: 4px 12px;
             border-radius: 20px;
             margin-bottom: 8px;
             text-transform: uppercase;
-            box-shadow: 0 0 10px rgba(255, 26, 26, 0.8);
         }
 
         .interactive-reward-banner h3 {
             margin: 5px 0 8px;
             font-size: 1.25rem;
-            color: #ff4d4d;
+            color: #1e293b;
         }
 
         .interactive-reward-banner p {
@@ -170,24 +162,22 @@
             border-radius: 8px;
             font-weight: 900;
             font-size: 0.95rem;
-            border: 1px solid #ff9999;
-            box-shadow: 0 0 20px rgba(255, 26, 26, 0.7);
+            box-shadow: 0 4px 15px rgba(255, 26, 26, 0.3);
         }
 
         .advertica-sidebar-box, .mybid-sidebar-box {
-            background: var(--card-bg);
-            border: 2px solid var(--alert-red);
+            background: #ffffff;
+            border: 2px solid #fee2e2;
             border-radius: 16px;
             padding: 15px;
             margin-bottom: 20px;
-            backdrop-filter: blur(10px);
             text-align: center;
-            box-shadow: 0 0 20px rgba(255, 26, 26, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         .advertica-badge, .mybid-badge {
             font-size: 0.75rem;
-            color: #ff4d4d;
+            color: #dc2626;
             margin-bottom: 10px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
@@ -198,26 +188,22 @@
             text-align: center;
             padding: 35px 20px;
             border-bottom: 4px solid var(--alert-red);
-            background: rgba(15, 2, 2, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(255, 26, 26, 0.2);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
         header h1 {
             margin: 0;
             font-size: 3rem;
-            background: linear-gradient(to right, #ff1a1a, #ff9999);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #1e293b;
             font-weight: 900;
             letter-spacing: 1px;
             text-transform: uppercase;
-            text-shadow: 0 0 40px rgba(255, 26, 26, 0.8);
         }
 
         header p {
             margin: 8px 0 0;
-            color: #ff4d4d;
+            color: #dc2626;
             font-size: 1.1rem;
             font-weight: 800;
             text-transform: uppercase;
@@ -237,15 +223,15 @@
         }
 
         .login-trigger-btn {
-            background: rgba(255, 26, 26, 0.15);
-            color: #ff9999;
-            border: 2px solid var(--alert-red);
+            background: #ffffff;
+            color: #dc2626;
+            border: 2px solid #fee2e2;
             padding: 8px 16px;
             border-radius: 8px;
             cursor: pointer;
             font-size: 0.9rem;
             font-weight: 800;
-            box-shadow: 0 0 10px rgba(255, 26, 26, 0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .search-bar-container {
@@ -255,19 +241,19 @@
         .search-input {
             width: 100%;
             padding: 14px 20px;
-            background: var(--card-bg);
-            border: 2px solid var(--alert-red);
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
             border-radius: 12px;
             color: var(--text-main);
             font-size: 1rem;
             outline: none;
             box-sizing: border-box;
-            box-shadow: 0 0 15px rgba(255, 26, 26, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
         }
 
         .search-input:focus {
-            border-color: #ffffff;
-            box-shadow: 0 0 25px rgba(255, 26, 26, 0.8);
+            border-color: #dc2626;
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.15);
         }
 
         .main-layout {
@@ -289,31 +275,31 @@
         }
 
         .sidebar-widget {
-            background: var(--card-bg);
-            border: 2px solid var(--alert-red);
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 20px;
             text-align: center;
-            box-shadow: 0 0 15px rgba(255, 26, 26, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
         .sidebar-widget h3 {
             margin-top: 0;
             font-size: 1.1rem;
-            color: #ff4d4d;
+            color: #1e293b;
             margin-bottom: 15px;
             font-weight: 800;
         }
 
         .admin-panel {
-            background: var(--card-bg);
+            background: #ffffff;
             border: 3px solid var(--alert-red);
             padding: 25px;
             border-radius: 16px;
             margin-bottom: 30px;
             display: none;
-            box-shadow: 0 0 40px rgba(255, 26, 26, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .admin-panel.active {
@@ -322,7 +308,7 @@
 
         .admin-panel h2 {
             margin-top: 0;
-            color: #ff4d4d;
+            color: #dc2626;
             font-size: 1.4rem;
             display: flex;
             justify-content: space-between;
@@ -345,15 +331,15 @@
             display: block;
             margin-bottom: 6px;
             font-size: 0.9rem;
-            color: #ff9999;
+            color: #1e293b;
             font-weight: 700;
         }
 
         .form-group input, .form-group textarea {
             width: 100%;
             padding: 12px;
-            background: rgba(10, 2, 2, 0.9);
-            border: 2px solid var(--alert-red);
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
             border-radius: 8px;
             color: var(--text-main);
             font-size: 1rem;
@@ -364,13 +350,13 @@
         button.primary-btn {
             background: linear-gradient(135deg, #ff1a1a, #990000);
             color: white;
-            border: 1px solid #ff9999;
+            border: none;
             padding: 12px 24px;
             font-size: 1rem;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 900;
-            box-shadow: 0 0 25px rgba(255, 26, 26, 0.8);
+            box-shadow: 0 4px 15px rgba(255, 26, 26, 0.4);
         }
 
         .news-feed h2 {
@@ -381,27 +367,26 @@
             margin-top: 0;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #ff4d4d;
-            text-shadow: 0 0 10px rgba(255, 77, 77, 0.4);
+            color: #1e293b;
         }
 
         .first-banner-ad-box, .infeed-ad-box {
-            background: var(--card-bg);
-            border: 2px solid var(--alert-red);
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 25px;
             text-align: center;
-            box-shadow: 0 0 20px rgba(255, 26, 26, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
         .news-card {
-            background: var(--card-bg);
-            border: 2px solid var(--alert-red);
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
             padding: 25px;
             border-radius: 16px;
             margin-bottom: 20px;
-            box-shadow: 0 10px 35px rgba(255, 26, 26, 0.35);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
         }
@@ -414,13 +399,12 @@
             width: 8px;
             height: 100%;
             background: var(--alert-red);
-            box-shadow: 0 0 15px var(--alert-red);
         }
 
         .news-card h3 {
             margin-top: 0;
             font-size: 1.6rem;
-            color: #ffffff;
+            color: #1e293b;
             font-weight: 900;
             line-height: 1.3;
         }
@@ -435,9 +419,9 @@
 
         .news-date, .read-time {
             font-size: 0.8rem;
-            color: #ff4d4d;
-            background: rgba(255, 26, 26, 0.15);
-            border: 1px solid rgba(255, 26, 26, 0.4);
+            color: #dc2626;
+            background: #fee2e2;
+            border: 1px solid #fecaca;
             padding: 4px 10px;
             border-radius: 20px;
             font-weight: 800;
@@ -445,7 +429,7 @@
 
         .news-content {
             line-height: 1.7;
-            color: #ffe6e6;
+            color: #475569;
             white-space: pre-wrap;
             font-size: 1.05rem;
         }
@@ -458,9 +442,9 @@
         }
 
         .share-btn {
-            background: rgba(255, 26, 26, 0.2);
-            color: #ff9999;
-            border: 1px solid var(--alert-red);
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #cbd5e1;
             padding: 7px 16px;
             font-size: 0.85rem;
             border-radius: 6px;
@@ -469,9 +453,9 @@
         }
 
         .delete-btn {
-            background: rgba(239, 68, 68, 0.3);
-            color: #ffcccc;
-            border: 1px solid var(--alert-red);
+            background: #fee2e2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
             padding: 7px 16px;
             font-size: 0.85rem;
             border-radius: 6px;
@@ -482,7 +466,6 @@
 
         .delete-btn.admin-visible {
             display: inline-block;
-            box-shadow: 0 0 10px rgba(255, 26, 26, 0.5);
         }
 
         #toastContainer {
@@ -496,8 +479,8 @@
         }
 
         .toast {
-            background: rgba(15, 2, 2, 0.95);
-            border: 2px solid var(--alert-red);
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
             color: var(--text-main);
             padding: 12px 20px;
             border-radius: 10px;
@@ -505,7 +488,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 0 25px rgba(255, 26, 26, 0.6);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             font-weight: 700;
         }
 
@@ -523,7 +506,7 @@
     <div id="toastContainer"></div>
 
     <!-- [Ad Company: Clickadu / Direct Link] -->
-    <div style="background: #111; color: #ff9999; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-bottom: 1px dashed #ff1a1a; letter-spacing: 0.5px;">
+    <div style="background: #f1f5f9; color: #dc2626; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-bottom: 1px dashed #cbd5e1; letter-spacing: 0.5px;">
         📢 [Ad Company: Clickadu] - Sticky Bottom Link
     </div>
     <div class="sticky-bottom-ad">
@@ -576,11 +559,11 @@
                 <h2>🚨 Live Red Alerts</h2>
                 
                 <!-- [Ad Company: A-ADS] Banner Ad -->
-                <div style="background: #111; color: #ff9999; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #ff1a1a; border-bottom: none;">
+                <div style="background: #f1f5f9; color: #dc2626; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #cbd5e1; border-bottom: none;">
                     📢 [Ad Company: A-ADS] - Sponsored Bulletin Banner
                 </div>
                 <div class="first-banner-ad-box" style="border-radius: 0 0 16px 16px;">
-                    <div style="font-size:0.8rem; color:#ff4d4d; margin-bottom:8px; font-weight:900;">SPONSORED RED ALERT BULLETIN</div>
+                    <div style="font-size:0.8rem; color:#dc2626; margin-bottom:8px; font-weight:900;">SPONSORED RED ALERT BULLETIN</div>
                     <div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
                          <iframe data-aa='2454542' src='//acceptable.a-ads.com/2454542/?size=Adaptive'
                                style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
@@ -588,14 +571,14 @@
                 </div>
 
                 <div id="newsContainer">
-                    <div class="loading-text" style="text-align: center; color: #ff4d4d; padding: 40px; font-weight:850;">Connecting to secure red alert servers...</div>
+                    <div class="loading-text" style="text-align: center; color: #dc2626; padding: 40px; font-weight:850;">Connecting to secure red alert servers...</div>
                 </div>
             </div>
 
             <aside class="sidebar">
                 
                 <!-- [Ad Company: Adsterra / ProfitableRateCPM] -->
-                <div style="background: #111; color: #ff9999; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #ff1a1a; border-bottom: none;">
+                <div style="background: #f1f5f9; color: #dc2626; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #cbd5e1; border-bottom: none;">
                     📢 [Ad Company: Adsterra] - Interactive Reward Banner
                 </div>
                 <div class="interactive-reward-banner" style="border-radius: 0 0 16px 16px;">
@@ -606,7 +589,7 @@
                 </div>
 
                 <!-- [Ad Company: Advertica] Sidebar Ad -->
-                <div style="background: #111; color: #ff9999; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #ff1a1a; border-bottom: none;">
+                <div style="background: #f1f5f9; color: #dc2626; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #cbd5e1; border-bottom: none;">
                     📢 [Ad Company: Advertica.com] - Sidebar Responsive Ad
                 </div>
                 <div class="advertica-sidebar-box" style="border-radius: 0 0 16px 16px;">
@@ -616,7 +599,7 @@
                 </div>
 
                 <!-- [Ad Company: MyBid] Sidebar Ad -->
-                <div style="background: #111; color: #ff9999; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #ff1a1a; border-bottom: none;">
+                <div style="background: #f1f5f9; color: #dc2626; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #cbd5e1; border-bottom: none;">
                     📢 [Ad Company: MyBid.com] - Native Banner Widget
                 </div>
                 <div class="mybid-sidebar-box" style="border-radius: 0 0 16px 16px;">
@@ -692,7 +675,7 @@
 
             if (error) {
                 console.error('Error fetching news:', error);
-                newsContainer.innerHTML = '<div class="empty-text" style="text-align:center; color:#ff4d4d; padding:40px; font-weight:800;">Failed to load red alert feeds.</div>';
+                newsContainer.innerHTML = '<div class="empty-text" style="text-align:center; color:#dc2626; padding:40px; font-weight:800;">Failed to load red alert feeds.</div>';
                 return;
             }
 
@@ -740,14 +723,14 @@
                     
                     // [Ad Company: Advertica] In-Feed Ad Banner Label
                     adBox.innerHTML = `
-                        <div style="background: #111; color: #ff9999; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #ff1a1a; border-bottom: none;">
+                        <div style="background: #f1f5f9; color: #dc2626; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #cbd5e1; border-bottom: none;">
                             📢 [Ad Company: Advertica.com] - In-Feed Script Ad
                         </div>
                     `;
                     adBox.className = 'infeed-ad-box';
                     adBox.style.borderRadius = '0 0 16px 16px';
                     adBox.innerHTML += `
-                        <div style="font-size:0.8rem; color:#ff4d4d; margin-bottom:8px; font-weight:900;">SPONSORED RED ALERT UPDATE</div>
+                        <div style="font-size:0.8rem; color:#dc2626; margin-bottom:8px; font-weight:900;">SPONSORED RED ALERT UPDATE</div>
                         <div id="third-ad-wrapper"></div>
                     `;
                     newsContainer.appendChild(adBox);
