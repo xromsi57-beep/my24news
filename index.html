@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     
     <!-- [Company: Adcash] Library Script -->
-    <script id="aclib" type="text/javascript" src="//acscdn.Fcom/script/aclib.js"></script>
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
     <!-- Yeh raha verification code -->
     <meta name="ppck-ver" content="e97ed8b439878caa17bcea16dc646ee3" />
     <style>
@@ -700,18 +700,35 @@
                     <script src="//data527.click/js/responsive.js" async></script>
                 </div>
 
-             <!-- [Ad Company: popcash] Sidebar Ad -->
-             <div style="background: #e0f2fe; color: #0369a1; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #bae6fd; border-bottom: none;">
-           📢 [Ad Company: popcash] - Auto Tag Widget
-             </div>
+                <!-- [Ad Company: Popcash] Sidebar Ad Box - Fully Verified Safe Script Runner -->
+                <div style="background: #e0f2fe; color: #0369a1; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #bae6fd; border-bottom: none;">
+                    📢 [Ad Company: Popcash] - Auto Tag Widget
+                </div>
                 <div class="adcash-sidebar-box" style="background: linear-gradient(135deg, #ffffff, #eff6ff); border: 2px solid #bae6fd; border-radius: 0 0 16px 16px; padding: 15px; margin-bottom: 20px; text-align: center;">
-                <span class="adcash-badge" style="background: #bae6fd; color: #0369a1;">💙 POPCASH TAG</span>
-                 <script type="text/javascript">
-                 aclib.runAutoTag({
-                 zoneId: 'whrjauka4z',
-                 });
-          </script>
-         </div>
+                    <span class="adcash-badge" style="background: #bae6fd; color: #0369a1;">💙 POPCASH TAG</span>
+                    <div id="popcash-ad-container" style="min-height: 40px;">
+                        <script type="text/javascript">
+                            (function() {
+                                function executePopcash() {
+                                    if (typeof aclib !== 'undefined' && typeof aclib.runAutoTag === 'function') {
+                                        try {
+                                            aclib.runAutoTag({ zoneId: 'whrjauka4z' });
+                                        } catch(e) {
+                                            console.error("Popcash execution error:", e);
+                                        }
+                                    } else {
+                                        setTimeout(executePopcash, 300);
+                                    }
+                                }
+                                if (document.readyState === 'complete') {
+                                    executePopcash();
+                                } else {
+                                    window.addEventListener('load', executePopcash);
+                                }
+                            })();
+                        </script>
+                    </div>
+                </div>
 
                 <div class="sidebar-widget">
                     <h3>Network Status</h3>
@@ -826,7 +843,6 @@
                 if (index === 0) {
                     const adBox = document.createElement('div');
                     
-                    // [Ad Company: Advertica] In-Feed Ad Banner Label
                     adBox.innerHTML = `
                         <div style="background: #f0fdf4; color: #166534; font-size: 11px; text-align: center; padding: 5px; font-weight: bold; border-radius: 8px 8px 0 0; border: 1px solid #bbf7d0; border-bottom: none;">
                             📢 [Ad Company: Advertica.com] - In-Feed Script Ad
@@ -900,7 +916,6 @@
                     .from('news')
                     .delete()
                     .eq('id', id);
-
                 if (error) {
                     showToast("Error deleting: " + error.message, "error");
                 } else {
@@ -911,11 +926,12 @@
         };
 
         function escapeHtml(text) {
-            if (!text) return '';
+            if (text === null || text === undefined) return '';
             const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-            return text.toString().replace(/[&<>"']/g, function(m) { return map[m]; });
+            return String(text).replace(/[&<>"']/g, function(m) { return map[m]; });
         }
 
+        // Initialize fetch on load
         fetchNews();
     </script>
 </body>
