@@ -20,6 +20,14 @@
     <!-- RichAds Script in Head -->
     <script src="https://richinfo.co/richpartners/in-page/js/richads-ob.js?pubid=1023065&siteid=407412" async></script>
 
+    <!-- Adsterra Popunder Script -->
+    <script id="adsterra-pop" type="text/javascript" src="//pl22349102.highcpmgate.com/8f/3a/0b/8f3a0b1c920e8822002f23281144002e.js"></script>
+
+    <!-- Clickadu Verification / Tag Script (Yahan apna Clickadu script/tag paste kar sakte hain) -->
+    <script type="text/javascript">
+        // Clickadu placement script agar ho toh yahan lagayein
+    </script>
+
     <style>
         :root {
             --bg-color: #f8fafc;
@@ -261,7 +269,6 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
-        /* Ad box label styling & fixed container bounds */
         .ad-box-container {
             background: #ffffff;
             border: 2px solid #e2e8f0;
@@ -509,7 +516,7 @@
 
     <div id="toastContainer"></div>
 
-    <!-- Ad Unit 1: A-Ads (With Company Name & Fixed Container) -->
+    <!-- Ad Unit 1: A-Ads -->
     <div class="ad-box-container" style="max-width: 728px; margin: 15px auto;">
         <span class="ad-company-label">Ad Company: A-Ads</span>
         <div id="frame" style="width: 100%; margin: auto; position: relative; z-index: 99998;">
@@ -525,6 +532,7 @@
                 <p>Click now to access secure and interactive streams.</p>
             </div>
         </div>
+        <!-- Adsterra Direct Link -->
         <a href="https://www.profitableratecpmnetwork.com/mcrcerya?key=a55bd3205d87cc3b096cfd06eabbb7c4" target="_blank" class="sticky-cta-btn">WATCH LIVE STREAM</a>
     </div>
 
@@ -570,12 +578,15 @@
             </div>
 
             <aside class="sidebar">
-                <div class="sidebar-widget">
-                    <h3>Network Status</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0; font-weight:700;">Secure encryption active. Live feeds streaming.</p>
+                <!-- Ad Unit 2: RichAds Widget Box -->
+                <div class="ad-box-container">
+                    <span class="ad-company-label">Ad Company: RichAds</span>
+                    <div class="fixed-ad-box" id="richads-container">
+                        <!-- RichAds in-page push script target container agar zarurat ho -->
+                    </div>
                 </div>
 
-                <!-- Ad Unit 2: Advertica (With Company Name & Fixed Container) -->
+                <!-- Ad Unit 3: Advertica -->
                 <div class="ad-box-container">
                     <span class="ad-company-label">Ad Company: Advertica</span>
                     <div class="fixed-ad-box">
@@ -734,7 +745,7 @@
             publishBtn.textContent = 'PUBLISHING...';
 
             const title = document.getElementById('title').value;
-            const content = document.getElementById('content').value;
+            const content = document.getElementById('content'].value;
 
             const { error } = await _supabase
                 .from('news')
