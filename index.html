@@ -573,17 +573,11 @@
                     </div>
                 </div>
 
-                <!-- Note for RichAds Banner Zone -->
+                <!-- Ad Unit 3: RichAds In-Page Push / Banner -->
                 <div class="ad-box-container">
-                    <span class="ad-company-label">Ad Company: RichAds (Banner)</span>
-                    <div class="fixed-ad-box" style="display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; color: var(--text-muted); font-size: 0.8rem; border: 2px dashed #cbd5e1;">
-                       <!-- Ad Unit 3: RichAds In-Page Push / Banner -->
-                         <div class="ad-box-container">
-                        <span class="ad-company-label">Ad Company: RichAds</span>
-                           <div class="fixed-ad-box">
-                         <script src="https://richinfo.co/richpartners/in-page/js/richads-ob.js?pubid=1023065&siteid=407412" async></script>
-                         </div>
-                        </div>
+                    <span class="ad-company-label">Ad Company: RichAds</span>
+                    <div class="fixed-ad-box">
+                        <script src="https://richinfo.co/richpartners/in-page/js/richads-ob.js?pubid=1023065&siteid=407412" async></script>
                     </div>
                 </div>
             </aside>
@@ -738,7 +732,7 @@
             const title = document.getElementById('title').value;
             const content = document.getElementById('content').value;
 
-            const {, error } = await _supabase
+            const { error } = await _supabase
                 .from('news')
                 .insert([{ title, content }]);
 
