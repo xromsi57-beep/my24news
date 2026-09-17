@@ -17,13 +17,8 @@
         gtag('config', 'G-TMVPX964PY');
     </script>
 
-    <!-- Clickadu / Advertica / PopCash / Adsterra Ad Scripts (Original Scripts Preserved) -->
-    <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}}('ve360.clickadu.com', 8847291, document.createElement('script'))</script>
-    <script id="adsterra-pop" type="text/javascript" src="//pl22349102.highcpmgate.com/8f/3a/0b/8f3a0b1c920e8822002f23281144002e.js"></script>
-    <script type="text/javascript">
-        var popunder = popunder || [];
-        popunder.push(['_setAccount', 'popcash_default']);
-    </script>
+    <!-- RichAds Script in Head -->
+    <script src="https://richinfo.co/richpartners/in-page/js/richads-ob.js?pubid=1023065&siteid=407412" async></script>
 
     <style>
         :root {
@@ -266,6 +261,39 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
+        /* Ad box label styling & fixed container bounds */
+        .ad-box-container {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .ad-company-label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        .fixed-ad-box {
+            width: 100%;
+            max-width: 300px;
+            height: 250px;
+            margin: 0 auto;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .admin-panel {
             background: var(--pure-white);
             border: 3px solid var(--soft-blue);
@@ -481,9 +509,12 @@
 
     <div id="toastContainer"></div>
 
-    <!-- Ad Unit: Banner Placement -->
-    <div style="text-align:center; margin: 15px 0;">
-        <iframe src="https://a-ads.com/32891?size=728x90" style="width:728px; height:90px; border:0; overflow:hidden;" scrolling="no"></iframe>
+    <!-- Ad Unit 1: A-Ads (With Company Name & Fixed Container) -->
+    <div class="ad-box-container" style="max-width: 728px; margin: 15px auto;">
+        <span class="ad-company-label">Ad Company: A-Ads</span>
+        <div id="frame" style="width: 100%; margin: auto; position: relative; z-index: 99998;">
+            <iframe data-aa='2455648' src='//acceptable.a-ads.com/2455648/?size=Adaptive' style='border:0; padding:0; width:100%; height:90px; overflow:hidden; display:block; margin: auto' scrolling="no"></iframe>
+        </div>
     </div>
 
     <div class="sticky-bottom-ad">
@@ -494,7 +525,7 @@
                 <p>Click now to access secure and interactive streams.</p>
             </div>
         </div>
-        <a href="https://www.effectiveratecpm.com/s6w38s4e0?key=936f45a498b894ec710264104d49a71a" target="_blank" class="sticky-cta-btn">WATCH LIVE STREAM</a>
+        <a href="https://www.profitableratecpmnetwork.com/mcrcerya?key=a55bd3205d87cc3b096cfd06eabbb7c4" target="_blank" class="sticky-cta-btn">WATCH LIVE STREAM</a>
     </div>
 
     <header>
@@ -544,18 +575,14 @@
                     <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0; font-weight:700;">Secure encryption active. Live feeds streaming.</p>
                 </div>
 
-                <!-- Ad Unit: Native Sidebar Ad -->
-                <div class="sidebar-widget">
-                    <script type="text/javascript">
-                        atOptions = {
-                            'key' : '02df47bc3b94cd21bdfc081e6cb701ef',
-                            'format' : 'iframe',
-                            'height' : 250,
-                            'width' : 300,
-                            'params' : {}
-                        };
-                    </script>
-                    <script type="text/javascript" src="//www.topcreativeformat.com/02df47bc3b94cd21bdfc081e6cb701ef/invoke.js"></script>
+                <!-- Ad Unit 2: Advertica (With Company Name & Fixed Container) -->
+                <div class="ad-box-container">
+                    <span class="ad-company-label">Ad Company: Advertica</span>
+                    <div class="fixed-ad-box">
+                        <ins style="width: 300px; height: 250px; display: inline-block;" data-width="300" data-height="250" class="sb247f20a24" data-domain="//data527.click" data-affquery="/5d980c1bb9e9ce6fa349/b247f20a24/?placementName=default">
+                            <script src="//data527.click/js/responsive.js" async></script>
+                        </ins>
+                    </div>
                 </div>
             </aside>
         </div>
@@ -579,10 +606,10 @@
         function escapeHtml(str) {
             if (!str) return '';
             return str.replace(/&/g, "&amp;")
-                      .replace(/</g, "&lt;")
-                      .replace(/>/g, "&gt;")
-                      .replace(/"/g, "&quot;")
-                      .replace(/'/g, "&#039;");
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
         }
 
         function showToast(message, type = 'success') {
