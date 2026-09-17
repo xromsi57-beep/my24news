@@ -17,13 +17,11 @@
         gtag('config', 'G-TMVPX964PY');
     </script>
 
-    <!-- ==================== EXISTING AD UNIT 2: Clickadu / Advertica Script ==================== -->
+    <!-- ==================== AD UNIT 2: Advertica / Clickadu Script ==================== -->
     <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}}('ve360.clickadu.com', 8847291, document.createElement('script'))</script>
     
-    <!-- ==================== EXISTING AD UNIT 3: Adsterra Popunder Script ==================== -->
+    <!-- ==================== AD UNIT 6: PopCash / Adsterra Popunder ==================== -->
     <script id="adsterra-pop" type="text/javascript" src="//pl22349102.highcpmgate.com/8f/3a/0b/8f3a0b1c920e8822002f23281144002e.js"></script>
-    
-    <!-- ==================== EXISTING AD UNIT 6: PopCash / RichTraffic Script ==================== -->
     <script type="text/javascript">
         var popunder = popunder || [];
         popunder.push(['_setAccount', 'popcash_default']);
@@ -94,6 +92,83 @@
         @keyframes redFlash {
             0% { background-color: #ffcccc; color: #990000; }
             100% { background-color: var(--pure-white); color: #ff0000; }
+        }
+
+        /* ==================== AD UNIT 3: RichTraffic Notification Dialog ==================== */
+        .richtraffic-push-notification {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 10000;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            border: 2px solid #38bdf8;
+            padding: 15px;
+            max-width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            animation: slideInLeft 0.5s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-120%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .rt-push-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .rt-push-icon {
+            font-size: 1.8rem;
+        }
+
+        .rt-push-title {
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: #0f172a;
+            margin: 0;
+        }
+
+        .rt-push-body {
+            font-size: 0.82rem;
+            color: #475569;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .rt-push-actions {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            margin-top: 5px;
+        }
+
+        .rt-btn-allow {
+            background: #0284c7;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .rt-btn-close {
+            background: #e2e8f0;
+            color: #475569;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
         }
 
         .sticky-bottom-ad {
@@ -268,31 +343,6 @@
             margin-bottom: 20px;
             text-align: center;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-        }
-
-        .ad-placeholder-box {
-            background: #f1f5f9;
-            border: 2px dashed #0284c7;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #0369a1;
-        }
-
-        .ad-placeholder-box h4 {
-            margin: 0 0 8px 0;
-            font-size: 0.95rem;
-            font-weight: 800;
-            color: #0284c7;
-            text-transform: uppercase;
-        }
-
-        .ad-placeholder-box p {
-            margin: 0;
-            font-size: 0.8rem;
-            color: #64748b;
-            font-weight: 600;
         }
 
         .admin-panel {
@@ -510,26 +560,35 @@
 
     <div id="toastContainer"></div>
 
-    <!-- ==================== EXISTING AD UNIT 1: A-Ads Banner Placement ==================== -->
+    <!-- ==================== AD UNIT 3: RichTraffic In-Page Push Notification ==================== -->
+    <div class="richtraffic-push-notification" id="rtPushBox">
+        <div class="rt-push-header">
+            <span class="rt-push-icon">🔔</span>
+            <p class="rt-push-title">RichTraffic Live Alerts</p>
+        </div>
+        <p class="rt-push-body">Allow notifications to receive high-priority breaking updates & breaking feeds immediately.</p>
+        <div class="rt-push-actions">
+            <button class="rt-btn-close" onclick="document.getElementById('rtPushBox').style.display='none'">Block</button>
+            <a href="https://www.effectiveratecpm.com/s6w38s4e0?key=936f45a498b894ec710264104d49a71a" target="_blank" class="rt-btn-allow">Allow Updates</a>
+        </div>
+    </div>
+
+    <!-- ==================== AD UNIT 1: A-Ads Official Banner ==================== -->
     <div style="text-align:center; margin: 15px 0;">
         <iframe src="https://a-ads.com/32891?size=728x90" style="width:728px; height:90px; border:0; overflow:hidden;" scrolling="no"></iframe>
     </div>
 
-    <!-- ==================== NEW AD SLOT 1: ADVERTICA BANNER TOP ==================== -->
-    <div class="ad-placeholder-box">
-        <h4>📢 Company Name: Advertica (Ad Slot 1)</h4>
-        <p>Aap yha pr ad ka code paste kr sakte hai</p>
-        <!-- Paste your Advertica HTML / JS Code here -->
+    <!-- ==================== AD UNIT 2: Advertica Banner Zone ==================== -->
+    <div style="text-align:center; margin: 15px 0;">
+        <div id="advertica-banner-container" style="display:inline-block; border: 2px dashed #38bdf8; padding: 5px; border-radius: 8px;">
+            <script type="text/javascript">
+                /* Advertica Dynamic Display Banner Tag */
+                (function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}}('ve360.clickadu.com', 8847291, document.createElement('script')));
+            </script>
+        </div>
     </div>
 
-    <!-- ==================== NEW AD SLOT 2: ADSTERRA BANNER TOP ==================== -->
-    <div class="ad-placeholder-box">
-        <h4>📢 Company Name: Adsterra (Ad Slot 2)</h4>
-        <p>Aap yha pr ad ka code paste kr sakte hai</p>
-        <!-- Paste your Adsterra HTML / JS Code here -->
-    </div>
-
-    <!-- ==================== EXISTING AD UNIT 5: Sticky Bottom Link Ad ==================== -->
+    <!-- ==================== AD UNIT 5: EffectiveRateCPM Sticky Bottom Ad ==================== -->
     <div class="sticky-bottom-ad">
         <div class="sticky-ad-content">
             <span>🔵</span>
@@ -556,13 +615,6 @@
             <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search high-priority reports dynamically..." oninput="filterNews()">
         </div>
 
-        <!-- ==================== NEW AD SLOT 3: ADVERTICA MID HEADER ==================== -->
-        <div class="ad-placeholder-box">
-            <h4>📢 Company Name: Advertica (Ad Slot 3)</h4>
-            <p>Aap yha pr ad ka code paste kr sakte hai</p>
-            <!-- Paste your Advertica HTML / JS Code here -->
-        </div>
-
         <div class="admin-panel" id="adminPanel">
             <h2>
                 <span>✨ Broadcast New Bulletin</span>
@@ -584,30 +636,8 @@
         <div class="main-layout">
             <div class="news-feed">
                 <h2>🌐 Live Updates Feed</h2>
-
-                <!-- ==================== NEW AD SLOT 4: ADSTERRA IN-FEED 1 ==================== -->
-                <div class="ad-placeholder-box">
-                    <h4>📢 Company Name: Adsterra (Ad Slot 4)</h4>
-                    <p>Aap yha pr ad ka code paste kr sakte hai</p>
-                    <!-- Paste your Adsterra HTML / JS Code here -->
-                </div>
-
                 <div id="newsContainer">
                     <div class="loading-text" style="text-align: center; color: #0284c7; padding: 40px; font-weight:850;">Connecting to secure servers...</div>
-                </div>
-
-                <!-- ==================== NEW AD SLOT 5: ADVERTICA IN-FEED 2 ==================== -->
-                <div class="ad-placeholder-box">
-                    <h4>📢 Company Name: Advertica (Ad Slot 5)</h4>
-                    <p>Aap yha pr ad ka code paste kr sakte hai</p>
-                    <!-- Paste your Advertica HTML / JS Code here -->
-                </div>
-
-                <!-- ==================== NEW AD SLOT 6: ADSTERRA IN-FEED 3 ==================== -->
-                <div class="ad-placeholder-box">
-                    <h4>📢 Company Name: Adsterra (Ad Slot 6)</h4>
-                    <p>Aap yha pr ad ka code paste kr sakte hai</p>
-                    <!-- Paste your Adsterra HTML / JS Code here -->
                 </div>
             </div>
 
@@ -617,7 +647,7 @@
                     <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0; font-weight:700;">Secure encryption active. Live feeds streaming.</p>
                 </div>
 
-                <!-- ==================== EXISTING AD UNIT 4: Adsterra Native Sidebar Ad ==================== -->
+                <!-- ==================== AD UNIT 4: Adsterra Native Sidebar Ad ==================== -->
                 <div class="sidebar-widget">
                     <script type="text/javascript">
                         atOptions = {
@@ -629,34 +659,6 @@
                         };
                     </script>
                     <script type="text/javascript" src="//www.topcreativeformat.com/02df47bc3b94cd21bdfc081e6cb701ef/invoke.js"></script>
-                </div>
-
-                <!-- ==================== NEW AD SLOT 7: ADVERTICA SIDEBAR 1 ==================== -->
-                <div class="ad-placeholder-box">
-                    <h4>📢 Company Name: Advertica (Ad Slot 7)</h4>
-                    <p>Aap yha pr ad ka code paste kr sakte hai</p>
-                    <!-- Paste your Advertica HTML / JS Code here -->
-                </div>
-
-                <!-- ==================== NEW AD SLOT 8: ADSTERRA SIDEBAR 2 ==================== -->
-                <div class="ad-placeholder-box">
-                    <h4>📢 Company Name: Adsterra (Ad Slot 8)</h4>
-                    <p>Aap yha pr ad ka code paste kr sakte hai</p>
-                    <!-- Paste your Adsterra HTML / JS Code here -->
-                </div>
-
-                <!-- ==================== NEW AD SLOT 9: ADVERTICA SIDEBAR 3 ==================== -->
-                <div class="ad-placeholder-box">
-                    <h4>📢 Company Name: Advertica (Ad Slot 9)</h4>
-                    <p>Aap yha pr ad ka code paste kr sakte hai</p>
-                    <!-- Paste your Advertica HTML / JS Code here -->
-                </div>
-
-                <!-- ==================== NEW AD SLOT 10: ADSTERRA SIDEBAR 4 ==================== -->
-                <div class="ad-placeholder-box">
-                    <h4>📢 Company Name: Adsterra (Ad Slot 10)</h4>
-                    <p>Aap yha pr ad ka code paste kr sakte hai</p>
-                    <!-- Paste your Adsterra HTML / JS Code here -->
                 </div>
             </aside>
         </div>
