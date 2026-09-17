@@ -17,15 +17,8 @@
         gtag('config', 'G-TMVPX964PY');
     </script>
 
-    <!-- ==================== AD UNIT 2: Advertica / Clickadu Script ==================== -->
-    <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}}('ve360.clickadu.com', 8847291, document.createElement('script'))</script>
-    
-    <!-- ==================== AD UNIT 6: PopCash / Adsterra Popunder ==================== -->
-    <script id="adsterra-pop" type="text/javascript" src="//pl22349102.highcpmgate.com/8f/3a/0b/8f3a0b1c920e8822002f23281144002e.js"></script>
-    <script type="text/javascript">
-        var popunder = popunder || [];
-        popunder.push(['_setAccount', 'popcash_default']);
-    </script>
+    <!-- ==================== AD UNIT 6: PopCash / Adsterra Popunder Engine ==================== -->
+    <script id="adsterra-pop" type="text/javascript" src="//pl22349102.highcpmgate.com/8f/3a/0b/8f3a0b1c920e8822002f23281144002e.js" async></script>
 
     <style>
         :root {
@@ -38,8 +31,6 @@
             --success: #10b981;
             --alert-red: #ff1a1a;
             --soft-blue: #38bdf8;
-            --pastel-pink: #f472b6;
-            --soft-green: #34d399;
             --pure-white: #ffffff;
         }
 
@@ -94,7 +85,7 @@
             100% { background-color: var(--pure-white); color: #ff0000; }
         }
 
-        /* ==================== AD UNIT 3: RichTraffic Notification Dialog ==================== */
+        /* ==================== AD UNIT 3: RichTraffic In-Page Push Notification ==================== */
         .richtraffic-push-notification {
             position: fixed;
             top: 20px;
@@ -103,7 +94,7 @@
             background: #ffffff;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            border: 2px solid #38bdf8;
+            border: 2px solid var(--soft-blue);
             padding: 15px;
             max-width: 320px;
             display: flex;
@@ -171,6 +162,27 @@
             cursor: pointer;
         }
 
+        .ad-container-box {
+            background: #ffffff;
+            border: 2px dashed var(--soft-blue);
+            border-radius: 12px;
+            padding: 12px;
+            margin: 20px auto;
+            text-align: center;
+            max-width: 730px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .ad-tag-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
         .sticky-bottom-ad {
             position: fixed;
             bottom: 0;
@@ -186,12 +198,6 @@
             z-index: 1000;
             box-shadow: 0 -5px 25px rgba(56, 189, 248, 0.2);
             box-sizing: border-box;
-            animation: slideUpAd 0.5s ease-out;
-        }
-
-        @keyframes slideUpAd {
-            from { transform: translateY(100%); }
-            to { transform: translateY(0); }
         }
 
         .sticky-ad-content {
@@ -223,19 +229,7 @@
             font-size: 0.85rem;
             border: 1px solid #bae6fd;
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
-            animation: pulseBtn 1.2s infinite;
             white-space: nowrap;
-            transition: transform 0.2s;
-        }
-
-        .sticky-cta-btn:hover {
-            transform: scale(1.08);
-        }
-
-        @keyframes pulseBtn {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.06); }
-            100% { transform: scale(1); }
         }
 
         header {
@@ -285,13 +279,6 @@
             cursor: pointer;
             font-size: 0.9rem;
             font-weight: 800;
-            box-shadow: 0 2px 10px rgba(56, 189, 248, 0.1);
-            transition: all 0.2s;
-        }
-
-        .login-trigger-btn:hover {
-            background: #e0f2fe;
-            transform: translateY(-2px);
         }
 
         .search-bar-container {
@@ -308,13 +295,6 @@
             font-size: 1rem;
             outline: none;
             box-sizing: border-box;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-            transition: all 0.3s;
-        }
-
-        .search-input:focus {
-            border-color: var(--soft-blue);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
         }
 
         .main-layout {
@@ -352,13 +332,6 @@
             border-radius: 16px;
             margin-bottom: 30px;
             display: none;
-            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
-            animation: fadeIn 0.3s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .admin-panel.active {
@@ -415,7 +388,6 @@
             border-radius: 8px;
             cursor: pointer;
             font-weight: 900;
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
         }
 
         .news-feed h2 {
@@ -537,15 +509,9 @@
             gap: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             font-weight: 700;
-            animation: slideInRight 0.3s ease-out;
         }
 
-        @keyframes slideInRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-
-        .toast.success { border-left: 6px solid var(--soft-green); }
+        .toast.success { border-left: 6px solid var(--success); }
         .toast.error { border-left: 6px solid var(--accent); }
     </style>
 </head>
@@ -564,40 +530,39 @@
     <div class="richtraffic-push-notification" id="rtPushBox">
         <div class="rt-push-header">
             <span class="rt-push-icon">🔔</span>
-            <p class="rt-push-title">RichTraffic Live Alerts</p>
+            <p class="rt-push-title">RichTraffic Live Network</p>
         </div>
-        <p class="rt-push-body">Allow notifications to receive high-priority breaking updates & breaking feeds immediately.</p>
+        <p class="rt-push-body">Allow instant push updates to stream high-priority alerts and breaking bulletins live.</p>
         <div class="rt-push-actions">
-            <button class="rt-btn-close" onclick="document.getElementById('rtPushBox').style.display='none'">Block</button>
+            <button class="rt-btn-close" onclick="document.getElementById('rtPushBox').style.display='none'">Dismiss</button>
             <a href="https://www.effectiveratecpm.com/s6w38s4e0?key=936f45a498b894ec710264104d49a71a" target="_blank" class="rt-btn-allow">Allow Updates</a>
         </div>
     </div>
 
     <!-- ==================== AD UNIT 1: A-Ads Official Banner ==================== -->
-    <div style="text-align:center; margin: 15px 0;">
-        <iframe src="https://a-ads.com/32891?size=728x90" style="width:728px; height:90px; border:0; overflow:hidden;" scrolling="no"></iframe>
+    <div class="ad-container-box">
+        <span class="ad-tag-label">Sponsored Advertisement (A-Ads Network)</span>
+        <iframe src="https://a-ads.com/32891?size=728x90" style="width:100%; max-width:728px; height:90px; border:0; overflow:hidden;" scrolling="no"></iframe>
     </div>
 
-    <!-- ==================== AD UNIT 2: Advertica Banner Zone ==================== -->
-    <div style="text-align:center; margin: 15px 0;">
-        <div id="advertica-banner-container" style="display:inline-block; border: 2px dashed #38bdf8; padding: 5px; border-radius: 8px;">
-            <script type="text/javascript">
-                /* Advertica Dynamic Display Banner Tag */
-                (function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}}('ve360.clickadu.com', 8847291, document.createElement('script')));
-            </script>
+    <!-- ==================== AD UNIT 2: Advertica / Clickadu Dynamic Zone ==================== -->
+    <div class="ad-container-box">
+        <span class="ad-tag-label">Sponsored Ad Feed (Advertica / Clickadu)</span>
+        <div id="clickadu-ad-wrapper">
+            <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}}('ve360.clickadu.com', 8847291, document.createElement('script'))</script>
         </div>
     </div>
 
-    <!-- ==================== AD UNIT 5: EffectiveRateCPM Sticky Bottom Ad ==================== -->
+    <!-- ==================== AD UNIT 5: EffectiveRateCPM Sticky CTA ==================== -->
     <div class="sticky-bottom-ad">
         <div class="sticky-ad-content">
             <span>🔵</span>
             <div class="sticky-ad-text">
-                <h4>LIVE BROADCAST FEED</h4>
-                <p>Click now to access secure and interactive streams.</p>
+                <h4>LIVE BROADCAST FEED (EffectiveRateCPM)</h4>
+                <p>Access high-definition interactive streams and direct report links.</p>
             </div>
         </div>
-        <a href="https://www.effectiveratecpm.com/s6w38s4e0?key=936f45a498b894ec710264104d49a71a" target="_blank" class="sticky-cta-btn">WATCH LIVE STREAM</a>
+        <a href="https://www.effectiveratecpm.com/s6w38s4e0?key=936f45a498b894ec710264104d49a71a" target="_blank" class="sticky-cta-btn">ACCESS FEED NOW</a>
     </div>
 
     <header>
@@ -649,6 +614,7 @@
 
                 <!-- ==================== AD UNIT 4: Adsterra Native Sidebar Ad ==================== -->
                 <div class="sidebar-widget">
+                    <span class="ad-tag-label">Partner Ad (Adsterra)</span>
                     <script type="text/javascript">
                         atOptions = {
                             'key' : '02df47bc3b94cd21bdfc081e6cb701ef',
