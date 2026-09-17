@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🚨 CRITICAL BREAKING NEWS 24/7 - LIVE EMERGENCY FEED</title>
 
+    <!-- Clickadu / Traffic Verification Meta Tag -->
+    <meta name="ppck-ver" content="e97ed8b439878caa17bcea16dc646ee3" />
+
     <!-- Supabase Library -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -22,11 +25,6 @@
 
     <!-- Adsterra Popunder Script -->
     <script id="adsterra-pop" type="text/javascript" src="//pl22349102.highcpmgate.com/8f/3a/0b/8f3a0b1c920e8822002f23281144002e.js"></script>
-
-    <!-- Clickadu Verification / Tag Script (Yahan apna Clickadu script/tag paste kar sakte hain) -->
-    <script type="text/javascript">
-        // Clickadu placement script agar ho toh yahan lagayein
-    </script>
 
     <style>
         :root {
@@ -581,9 +579,7 @@
                 <!-- Ad Unit 2: RichAds Widget Box -->
                 <div class="ad-box-container">
                     <span class="ad-company-label">Ad Company: RichAds</span>
-                    <div class="fixed-ad-box" id="richads-container">
-                        <!-- RichAds in-page push script target container agar zarurat ho -->
-                    </div>
+                    <div class="fixed-ad-box" id="richads-container"></div>
                 </div>
 
                 <!-- Ad Unit 3: Advertica -->
@@ -745,7 +741,7 @@
             publishBtn.textContent = 'PUBLISHING...';
 
             const title = document.getElementById('title').value;
-            const content = document.getElementById('content'].value;
+            const content = document.getElementById('content').value;
 
             const { error } = await _supabase
                 .from('news')
