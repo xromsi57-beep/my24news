@@ -20,9 +20,6 @@
         gtag('config', 'G-TMVPX964PY');
     </script>
 
-    <!-- RichAds Push Notifications Script -->
-    <script type="module" src="https://richinfo.co/richpartners/push/js/rp-cl-ob.js?pubid=1023065&siteid=407428&niche=33" async data-cfasync="false"></script>
-
     <!-- Adsterra Popunder Script -->
     <script id="adsterra-pop" type="text/javascript" src="//pl22349102.highcpmgate.com/8f/3a/0b/8f3a0b1c920e8822002f23281144002e.js"></script>
 
@@ -504,7 +501,7 @@
 
     <div id="toastContainer"></div>
 
-    <!-- Ad Unit 1: A-Ads -->
+    <!-- Ad Unit 1: A-Ads Banner -->
     <div class="ad-box-container" style="max-width: 728px; margin: 15px auto;">
         <span class="ad-company-label">Ad Company: A-Ads</span>
         <div id="frame" style="width: 100%; margin: auto; position: relative; z-index: 99998;">
@@ -512,6 +509,7 @@
         </div>
     </div>
 
+    <!-- Sticky Bottom Ad (Adsterra Direct Link) -->
     <div class="sticky-bottom-ad">
         <div class="sticky-ad-content">
             <span>🔵</span>
@@ -520,7 +518,6 @@
                 <p>Click now to access secure and interactive streams.</p>
             </div>
         </div>
-        <!-- Adsterra Direct Link -->
         <a href="https://www.profitableratecpmnetwork.com/mcrcerya?key=a55bd3205d87cc3b096cfd06eabbb7c4" target="_blank" class="sticky-cta-btn">WATCH LIVE STREAM</a>
     </div>
 
@@ -566,11 +563,21 @@
             </div>
 
             <aside class="sidebar">
-                <!-- Sidebar Placeholder (Cleaned up from old networks) -->
+                <!-- Ad Unit 2: Advertica Banner Ad Box -->
                 <div class="ad-box-container">
-                    <span class="ad-company-label">Sponsored Space</span>
-                    <div class="fixed-ad-box" style="display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.85rem; font-weight: 700;">
-                        Active Push Feed Area
+                    <span class="ad-company-label">Ad Company: Advertica</span>
+                    <div class="fixed-ad-box">
+                        <ins style="width: 300px; height: 250px; display: inline-block;" data-width="300" data-height="250" class="sb247f20a24" data-domain="//data527.click" data-affquery="/5d980c1bb9e9ce6fa349/b247f20a24/?placementName=default">
+                            <script src="//data527.click/js/responsive.js" async></script>
+                        </ins>
+                    </div>
+                </div>
+
+                <!-- Note for RichAds Banner Zone -->
+                <div class="ad-box-container">
+                    <span class="ad-company-label">Ad Company: RichAds (Banner)</span>
+                    <div class="fixed-ad-box" style="display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; color: var(--text-muted); font-size: 0.8rem; border: 2px dashed #cbd5e1;">
+                        Yahan RichAds ka banner code lagaya ja sakta hai agar aapke paas unka display/banner tag ho.
                     </div>
                 </div>
             </aside>
@@ -725,7 +732,7 @@
             const title = document.getElementById('title').value;
             const content = document.getElementById('content').value;
 
-            const { error } = await _supabase
+            const {, error } = await _supabase
                 .from('news')
                 .insert([{ title, content }]);
 
